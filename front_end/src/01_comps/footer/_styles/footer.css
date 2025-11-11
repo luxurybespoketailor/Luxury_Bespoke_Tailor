@@ -1,0 +1,123 @@
+.footer {
+  background-color: var(--secondary-bg-color);
+  border-top: 1px solid var(--primary-border-color);
+  padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-md);
+  margin-top: auto;
+}
+
+.footer__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Footer Sections */
+.footer__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Brand Section - removed old styles, now handled by FooterBrand component */
+
+/* Headings */
+.footer__heading {
+  color: var(--primary-text-color);
+  font-size: var(--primary-h3-size);
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Lists */
+.footer__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: 0;
+  margin: 0;
+}
+
+.footer__list-item {
+  line-height: 1.8;
+}
+
+/* Links */
+.footer__link {
+  color: var(--muted-text-color);
+  text-decoration: none;
+  font-size: var(--secondary-text-size);
+  transition: color var(--transition-fast);
+  display: inline-block;
+}
+
+.footer__link:hover {
+  color: var(--primary-text-color);
+}
+
+/* Social Icons Row - now rendered separately above copyright */
+
+/* Bottom Section */
+.footer__bottom {
+  border-top: 1px solid var(--primary-border-color);
+  padding-top: var(--spacing-md);
+  text-align: center;
+}
+
+.footer__copyright {
+  color: var(--muted-text-color);
+  font-size: var(--secondary-text-size);
+  margin: 0;
+}
+
+/* Mobile: Stack all columns */
+@media (max-width: 767px) {
+  .footer {
+    padding: var(--spacing-lg) var(--spacing-sm) var(--spacing-md);
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .footer__section {
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer__heading {
+    font-size: var(--secondary-h3-size);
+  }
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .footer {
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .footer__section:first-child {
+    grid-column: span 2;
+  }
+}
+
+/* Desktop: Full 4-column layout */
+@media (min-width: 1024px) {
+  .footer {
+    padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-md);
+  }
+
+  .footer__container {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  }
+}
+

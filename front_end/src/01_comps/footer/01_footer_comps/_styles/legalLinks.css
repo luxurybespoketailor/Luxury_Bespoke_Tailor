@@ -1,0 +1,38 @@
+.legalLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.legalLinks__heading {
+  color: var(--primary-text-color);
+  font-size: var(--primary-h3-size);
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.legalLinks__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: 0;
+  margin: 0;
+}
+
+.legalLinks__item {
+  line-height: 1.8;
+}
+
+.legalLinks__link {
+  color: var(--muted-text-color);
+  text-decoration: none;
+  font-size: var(--secondary-text-size);
+  transition: color var(--transition-fast);
+  display: inline-block;
+}
+
+.legalLinks__link:hover {
+  color: var(--primary-text-color);
+}
+

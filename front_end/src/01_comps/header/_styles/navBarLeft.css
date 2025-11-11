@@ -1,0 +1,86 @@
+/* NavBar Left - Desktop only */
+.navBar--left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align items to the right (closer to logo) */
+  width: 100% !important;
+  justify-content: space-between !important;
+  /* background-color: red; */
+}
+
+.navBar--left_list {
+  display: flex;
+  list-style: none;
+  width: 100% !important;
+
+  justify-content: space-evenly !important;
+  gap: var(--spacing-lg);
+  margin: 0;
+  padding: 0;
+}
+
+.navBar--left_item {
+  position: relative;
+}
+
+.navBar--left_link {
+  text-decoration: none;
+  color: var(--primary-text-color);
+  font-size: var(--primary-text-size);
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  display: block;
+  transition: all var(--transition-fast);
+  position: relative;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.navBar--left_link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-text-color);
+  transition: width var(--transition-medium);
+}
+
+.navBar--left_link:hover {
+  color: var(--link-hover-color);
+}
+
+.navBar--left_link:hover::after {
+  width: 100%;
+}
+
+/* Active link styling */
+.navBar--left_link.active {
+  color: var(--primary-text-color);
+  border-bottom: 2px solid var(--primary-text-color);
+}
+
+/* Hide on mobile - only show on desktop */
+@media (max-width: 767px) {
+  .navBar--left {
+    display: none;
+  }
+}
+
+/* Tablet: Reduced spacing */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navBar--left_list {
+    gap: var(--spacing-md);
+  }
+
+  .navBar--left_link {
+    font-size: var(--secondary-text-size);
+  }
+}
+
+/* Desktop: Full spacing */
+@media (min-width: 1024px) {
+  .navBar--left_list {
+    gap: var(--spacing-lg);
+  }
+}

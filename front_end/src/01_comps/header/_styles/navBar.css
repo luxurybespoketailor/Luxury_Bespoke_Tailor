@@ -1,0 +1,166 @@
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBar_list {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+  margin: 0;
+  padding: 0;
+}
+
+.navBar_item {
+  position: relative;
+}
+
+.navBar_link {
+  text-decoration: none;
+  color: var(--primary-text-color);
+  font-size: var(--primary-text-size);
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  display: block;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.navBar_link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-text-color);
+  transition: width var(--transition-medium);
+}
+
+.navBar_link:hover {
+  color: var(--link-hover-color);
+}
+
+.navBar_link:hover::after {
+  width: 100%;
+}
+
+/* Active link styling */
+.navBar_link.active {
+  color: var(--primary-text-color);
+  border-bottom: 2px solid var(--primary-text-color);
+}
+
+/* Highlight Contact link on desktop - target specifically */
+@media (min-width: 768px) {
+  .navBar_item--contact .navBar_link {
+    border: 2px solid var(--primary-border-color);
+    border-radius: 4px;
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-weight: 600;
+  }
+
+  .navBar_item--contact .navBar_link:hover {
+    background-color: var(--primary-text-color);
+    color: var(--primary-bg-color);
+    border-color: var(--primary-text-color);
+  }
+
+  .navBar_item--contact .navBar_link::after {
+    display: none;
+  }
+
+  .navBar_item--contact .navBar_link.active {
+    border: 2px solid var(--primary-text-color);
+    background-color: var(--hover-bg-color);
+  }
+}
+
+/* Close button for mobile menu */
+.navBar__closeBtn {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  background: transparent;
+  border: none;
+  color: var(--primary-text-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xs);
+  border-radius: 4px;
+  transition: background-color var(--transition-fast);
+}
+
+.navBar__closeBtn:hover {
+  background-color: var(--hover-bg-color);
+}
+
+/* Mobile: Full-screen menu from left */
+@media (max-width: 767px) {
+  .navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--primary-bg-color);
+    z-index: var(--z-index-mobile-menu);
+    transform: translateX(-100%);
+    transition: transform var(--transition-medium);
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+
+  .navBar.open {
+    transform: translateX(0);
+  }
+
+  .navBar_list {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: 100%;
+    margin-top: var(--spacing-xl);
+  }
+
+  .navBar_item {
+    width: 100%;
+  }
+
+  .navBar_link {
+    padding: var(--spacing-md);
+    width: 100%;
+    font-size: var(--primary-h3-size);
+    font-weight: 600;
+  }
+
+  .navBar_link::after {
+    display: none;
+  }
+
+  .navBar_link.active {
+    background-color: var(--hover-bg-color);
+    border-left: 4px solid var(--primary-text-color);
+  }
+}
+
+/* Tablet: Horizontal with reduced spacing */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navBar_list {
+    gap: var(--spacing-md);
+  }
+
+  .navBar_link {
+    font-size: var(--secondary-text-size);
+  }
+}
+
+/* Desktop: Full horizontal layout */
+@media (min-width: 1024px) {
+  .navBar_list {
+    gap: var(--spacing-lg);
+  }
+}

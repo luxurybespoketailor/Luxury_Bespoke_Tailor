@@ -1,0 +1,104 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  z-index: var(--z-index-header);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  transition: all var(--transition-medium);
+}
+
+/* Header container - matches footer width */
+.header__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Scrolled state - solid background */
+.header--scrolled {
+  background-color: var(--primary-bg-color);
+  border-bottom-color: var(--primary-border-color);
+  box-shadow: 0 2px 10px var(--primary-boxShadow-color);
+}
+
+/* Logo styling within header */
+.header__container .logo {
+  height: 50px;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.header__container .logo:hover {
+  opacity: 0.8;
+}
+
+/* Desktop layout: nav items around centered logo */
+@media (min-width: 768px) {
+  .header__container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Three equal columns with centered logo */
+    gap: var(--spacing-xl);
+    align-items: center;
+  }
+
+  /* Left nav aligns to the right of its column */
+  .header__container .navBar--left {
+    justify-self: end;
+  }
+
+  /* Logo stays centered in middle column */
+  .header__container .logo {
+    justify-self: center;
+    flex-shrink: 0;
+  }
+
+  /* Right nav aligns to the left of its column */
+  .header__container .navBar--right {
+    justify-self: start;
+  }
+}
+
+/* Mobile: Hamburger left, logo center, contact right */
+@media (max-width: 767px) {
+  .header {
+    padding: var(--spacing-sm);
+  }
+
+  .header__container {
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+  }
+
+  .header__container .logo {
+    height: 40px;
+    order: 0; /* Reset order on mobile */
+    position: static;
+    transform: none;
+  }
+}
+
+/* Tablet: Adjust spacing - matches footer */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .header__container .logo {
+    height: 45px;
+  }
+}
+
+/* Desktop: Full layout - matches footer */
+@media (min-width: 1024px) {
+  .header {
+    padding: var(--spacing-sm) var(--spacing-xl);
+  }
+
+  .header__container .logo {
+    height: 50px;
+  }
+}

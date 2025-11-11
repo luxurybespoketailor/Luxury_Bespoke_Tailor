@@ -2,6 +2,8 @@
   /* Background Colors */
   --primary-bg-color: #000;
   --secondary-bg-color: #111;
+  --tertiary-bg-color: #1a1a1a;
+  --hover-bg-color: #222;
 
   /* Text Colors */
   --primary-text-color: #fff;
@@ -9,6 +11,8 @@
   --primary-h1-color: #fff;
   --primary-h2-color: #fff;
   --primary-h3-color: #fff;
+  --muted-text-color: #aaa;
+  --link-hover-color: #ddd;
 
   --secondary-text-color: #111;
   --secondary-label-color: #111;
@@ -17,15 +21,15 @@
   --secondary-h3-color: #111;
 
   /* Border Colors */
-  --primary-border-color: #fff;
-  --primary-border-color-hover: #fff;
-  --primary-boxShadow-color: #fff;
-  --primary-boxShadow-color-hover: #fff;
+  --primary-border-color: #333;
+  --primary-border-color-hover: #666;
+  --primary-boxShadow-color: rgba(255, 255, 255, 0.1);
+  --primary-boxShadow-color-hover: rgba(255, 255, 255, 0.2);
 
   --secondary-border-color: #111;
-  --secondary-border-color-hover: #111;
+  --secondary-border-color-hover: #222;
   --secondary-boxShadow-color: #111;
-  --secondary-boxShadow-color-hover: #111;
+  --secondary-boxShadow-color-hover: #222;
 
   /* Font Sizes */
   --primary-text-size: 16px;
@@ -42,18 +46,49 @@
   /* Icon Variables */
   --primary-icon-size: 24px;
   --primary-icon-color: #fff;
-  --primary-icon-color-hover: #fff;
-  --primary-icon-border-color: #fff;
-  --primary-icon-border-color-hover: #fff;
+  --primary-icon-color-hover: #ddd;
+  --primary-icon-border-color: #333;
+  --primary-icon-border-color-hover: #666;
 
   --secondary-icon-size: 20px;
   --secondary-icon-color: #111;
-  --secondary-icon-color-hover: #111;
+  --secondary-icon-color-hover: #333;
   --secondary-icon-border-color: #111;
-  --secondary-icon-border-color-hover: #111;
+  --secondary-icon-border-color-hover: #222;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-medium: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+
+  /* Z-index layers */
+  --z-index-base: 1;
+  --z-index-header: 100;
+  --z-index-mobile-menu: 200;
+  --z-index-modal: 300;
+  --z-index-tooltip: 400;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   background-color: var(--primary-bg-color);
+  /* background-color: red; */
   color: var(--primary-text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

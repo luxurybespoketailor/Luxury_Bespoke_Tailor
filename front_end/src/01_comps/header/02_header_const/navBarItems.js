@@ -11,17 +11,17 @@ export const NAVBAR_ITEMS = [
   },
   {
     id: 3,
-    label: "Contact",
-    href: "/contact",
-  },
-  {
-    id: 4,
     label: "Services",
     href: "/services",
   },
   {
-    id: 5,
+    id: 4,
     label: "Products",
     href: "/products",
+  },
+  {
+    id: 5,
+    label: "Contact",
+    href: "/contact",
   },
 ];
