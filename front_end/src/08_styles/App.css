@@ -1,0 +1,59 @@
+:root {
+  /* Background Colors */
+  --primary-bg-color: #000;
+  --secondary-bg-color: #111;
+
+  /* Text Colors */
+  --primary-text-color: #fff;
+  --primary-label-color: #fff;
+  --primary-h1-color: #fff;
+  --primary-h2-color: #fff;
+  --primary-h3-color: #fff;
+
+  --secondary-text-color: #111;
+  --secondary-label-color: #111;
+  --secondary-h1-color: #111;
+  --secondary-h2-color: #111;
+  --secondary-h3-color: #111;
+
+  /* Border Colors */
+  --primary-border-color: #fff;
+  --primary-border-color-hover: #fff;
+  --primary-boxShadow-color: #fff;
+  --primary-boxShadow-color-hover: #fff;
+
+  --secondary-border-color: #111;
+  --secondary-border-color-hover: #111;
+  --secondary-boxShadow-color: #111;
+  --secondary-boxShadow-color-hover: #111;
+
+  /* Font Sizes */
+  --primary-text-size: 16px;
+  --primary-label-size: 12px;
+  --primary-h1-size: 24px;
+  --primary-h2-size: 20px;
+  --primary-h3-size: 18px;
+  --secondary-text-size: 14px;
+  --secondary-label-size: 10px;
+  --secondary-h1-size: 22px;
+  --secondary-h2-size: 18px;
+  --secondary-h3-size: 16px;
+
+  /* Icon Variables */
+  --primary-icon-size: 24px;
+  --primary-icon-color: #fff;
+  --primary-icon-color-hover: #fff;
+  --primary-icon-border-color: #fff;
+  --primary-icon-border-color-hover: #fff;
+
+  --secondary-icon-size: 20px;
+  --secondary-icon-color: #111;
+  --secondary-icon-color-hover: #111;
+  --secondary-icon-border-color: #111;
+  --secondary-icon-border-color-hover: #111;
+}
+
+body {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+}
