@@ -4,13 +4,6 @@
   gap: var(--spacing-sm);
 }
 
-.legalLinks__heading {
-  color: var(--primary-text-color);
-  font-size: var(--primary-h3-size);
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-
 .legalLinks__list {
   list-style: none;
   display: flex;

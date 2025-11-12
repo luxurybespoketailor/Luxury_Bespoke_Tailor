@@ -1,0 +1,92 @@
+.businessHours {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) 0;
+}
+
+.businessHours__header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+}
+
+.businessHours__icon {
+  flex-shrink: 0;
+  stroke: var(--primary-text-color);
+}
+
+.businessHours__title {
+  color: var(--primary-text-color);
+  font-size: var(--primary-text-size);
+  font-weight: 600;
+  margin: 0;
+}
+
+.businessHours__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding: 0;
+  margin: 0;
+}
+
+.businessHours__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-sm);
+  line-height: 1.6;
+  padding: var(--spacing-xs) 0;
+}
+
+.businessHours__day {
+  color: var(--muted-text-color);
+  font-size: var(--secondary-text-size);
+  font-weight: 500;
+}
+
+.businessHours__time {
+  color: var(--primary-text-color);
+  font-size: var(--secondary-text-size);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.businessHours__time--closed {
+  color: var(--muted-text-color);
+  font-style: italic;
+}
+
+/* Mobile: Center content */
+@media (max-width: 767px) {
+  .businessHours {
+    align-items: center;
+    width: 100%;
+  }
+
+  .businessHours__header {
+    justify-content: center;
+  }
+
+  .businessHours__item {
+    width: 100%;
+    max-width: 300px;
+    justify-content: space-between;
+  }
+}
+
+/* Tablet: Adjust spacing */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .businessHours__title {
+    font-size: var(--secondary-text-size);
+  }
+
+  .businessHours__day,
+  .businessHours__time {
+    font-size: var(--secondary-text-size);
+  }
+}
+

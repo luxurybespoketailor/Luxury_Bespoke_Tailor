@@ -23,14 +23,6 @@
 
 /* Brand Section - removed old styles, now handled by FooterBrand component */
 
-/* Headings */
-.footer__heading {
-  color: var(--primary-text-color);
-  font-size: var(--primary-h3-size);
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-
 /* Lists */
 .footer__list {
   list-style: none;
@@ -87,10 +79,6 @@
   .footer__section {
     text-align: center;
     align-items: center;
-  }
-
-  .footer__heading {
-    font-size: var(--secondary-h3-size);
   }
 }
 

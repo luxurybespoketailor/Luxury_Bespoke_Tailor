@@ -6,7 +6,6 @@ import "./_styles/legalLinks.css";
 const LegalLinks = ({ legalLinks }) => {
   return (
     <div className="legalLinks">
-      <h3 className="legalLinks__heading">Legal</h3>
       <ul className="legalLinks__list">
         {legalLinks.map((item) => (
           <li key={item.id} className="legalLinks__item">
@@ -33,4 +32,3 @@ LegalLinks.propTypes = {
 LegalLinks.displayName = "LegalLinks";
 
 export default LegalLinks;
-

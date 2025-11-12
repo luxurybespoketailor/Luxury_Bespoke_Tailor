@@ -6,6 +6,7 @@ import {
   social_urls,
   branding,
   legalLinks,
+  businessHours,
 } from "../../04_constances/_constances.index.js";
 import {
   FooterBrand,
@@ -23,12 +24,15 @@ const Footer = () => {
       <div className="footer__container">
         {/* Column 1: Logo, Branding & Location Button */}
         <div className="footer__section">
-          <FooterBrand branding={branding} contactInfo={contactInfo} />
+          <FooterBrand
+            branding={branding}
+            contactInfo={contactInfo}
+            businessHours={businessHours}
+          />
         </div>
 
         {/* Column 2: Navigation Links */}
         <div className="footer__section footer__navigation">
-          <h3 className="footer__heading">Navigation</h3>
           <ul className="footer__list">
             {NAVBAR_ITEMS.map((item) => (
               <li key={item.id} className="footer__list-item">
