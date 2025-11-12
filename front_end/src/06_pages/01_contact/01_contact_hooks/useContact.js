@@ -10,5 +10,5 @@ export const useContact = () => {
   const { apiHelpers } = useContact_apiHelpers();
   const { handlers } = useContact_handlers({ states, setters, apiHelpers });
 
-  return { states: {}, handlers: {} };
+  return { states, handlers };
 };

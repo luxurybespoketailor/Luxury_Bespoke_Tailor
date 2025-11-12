@@ -3,8 +3,10 @@ import { useState } from "react";
 export const useContact_states = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    service: "",
     message: "",
+    phone: "",
+    whatsapp: "",
   });
   const [isLoading, setIsLoading] = useState(false);
   const [isFormError, setIsFormError] = useState(false);

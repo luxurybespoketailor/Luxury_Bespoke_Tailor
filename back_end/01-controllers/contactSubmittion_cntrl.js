@@ -8,15 +8,21 @@ const contactSubmittion_cntrl = async (req, res) => {
   try {
     const { success, message } = await contactSubmittion_srv(req, isDebug);
 
-    return res.status(200).json({
-      success: true,
-      message: "Contact Submitted Successfully",
+    return res.status(success ? 200 : 400).json({
+      success: success,
+      message: message,
     });
   } catch (error) {
     console.error(`⚠️☠️🚨${displayName}|<CONTROLLER>| catch(ERROR) |`, error);
-    return res.status(505).json({
+
+    // Return specific error messages
+    const errorMessage =
+      error.message || "Failed to process contact submission";
+    const statusCode = error.statusCode || 500;
+
+    return res.status(statusCode).json({
       success: false,
-      message: "Internal Server Error",
+      message: errorMessage,
       data: null,
     });
   } finally {
