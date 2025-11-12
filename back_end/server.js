@@ -16,6 +16,10 @@ import { keepAlive_srv } from "./services/services.index.js";
 
 const app = express();
 
+// Trust proxy - REQUIRED for Render.com (sits behind a proxy/load balancer)
+// This fixes the express-rate-limit X-Forwarded-For warning
+app.set("trust proxy", 1);
+
 app.use(helmet());
 
 app.use(cors(corsOptions));
