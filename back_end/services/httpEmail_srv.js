@@ -16,22 +16,48 @@ const getAccessKey = () => {
 };
 
 // Send email via HTTP (Web3Forms)
-export const sendEmailViaHttp = async ({ to, subject, html, text, contactData }) => {
-  isDebug && console.log(`💡📢❔${displayName}|<SEND_EMAIL_HTTP>| [TRIGGERED] | To: ${to}`);
+export const sendEmailViaHttp = async ({
+  to,
+  subject,
+  html,
+  text,
+  contactData,
+}) => {
+  isDebug &&
+    console.log(
+      `💡📢❔${displayName}|<SEND_EMAIL_HTTP>| [TRIGGERED] | To: ${to}`
+    );
 
   try {
     // Validate required parameters
     if (!to || !subject || !html) {
-      throw new Error("Missing required email parameters: to, subject, or html");
+      throw new Error(
+        "Missing required email parameters: to, subject, or html"
+      );
     }
 
     // Get access key
     const accessKey = getAccessKey();
     if (!accessKey) {
+      isDebug &&
+        console.error(
+          `⚠️ ${displayName}|<SEND_EMAIL_HTTP>| [ERROR] | Access key not found. Please set WEB3FORMS_ACCESS_KEY or EMAIL_API_KEY environment variable.`
+        );
       throw new Error(
-        "WEB3FORMS_ACCESS_KEY or EMAIL_API_KEY not configured. Please set one of these environment variables."
+        "WEB3FORMS_ACCESS_KEY or EMAIL_API_KEY not configured. Please set one of these environment variables in Render.com."
       );
     }
+
+    // Log access key status (without exposing the actual key)
+    isDebug &&
+      console.log(
+        `🔑 ${displayName}|<SEND_EMAIL_HTTP>| Access key found: ${accessKey.substring(
+          0,
+          8
+        )}...${accessKey.substring(accessKey.length - 4)} (length: ${
+          accessKey.length
+        })`
+      );
 
     // Format contact data for plain text email
     const emailBody = `
@@ -43,37 +69,98 @@ ${contactData.whatsapp ? `WhatsApp: ${contactData.whatsapp}` : ""}
     `.trim();
 
     // Prepare request data for Web3Forms
-    // Web3Forms supports both plain text and HTML emails
-    const requestData = {
-      access_key: accessKey,
-      subject: subject,
-      from_name: "Luxury Bespoke Tailor",
-      email: to, // Recipient email
-      message: emailBody, // Plain text version
-      // HTML version (Web3Forms will use HTML if available)
-      html: html,
-      // Additional metadata
-      replyto: contactData.email || process.env.EMAIL_USER || "",
-    };
+    // Web3Forms API format: https://docs.web3forms.com/getting-started/api-reference
+    // Note: Recipient email is configured in Web3Forms dashboard (linked to access_key)
+    // Required fields: access_key, name, message
+    // Optional fields: email (sender), subject, replyto, etc.
 
-    // Send email via HTTP POST (HTTPS)
+    // Create URLSearchParams for form data format (more compatible than JSON)
+    const formData = new URLSearchParams();
+    formData.append("access_key", accessKey);
+    formData.append("name", contactData.name || "Contact Form Submission");
+    formData.append("message", emailBody);
+    formData.append("subject", subject);
+
+    // Optional: Add sender email if available (for reply-to)
+    if (contactData.email) {
+      formData.append("email", contactData.email);
+    }
+
+    // Optional: Add reply-to email
+    if (process.env.EMAIL_USER) {
+      formData.append("replyto", process.env.EMAIL_USER);
+    }
+
+    // Send email via HTTP POST (HTTPS) using form data format
+    // Web3Forms accepts both JSON and form data, but form data is more compatible
     const response = await fetch(WEB3FORMS_API_URL, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
         Accept: "application/json",
       },
-      body: JSON.stringify(requestData),
+      body: formData.toString(),
     });
 
-    // Parse response
-    const result = await response.json();
+    // Get response text first to check if it's JSON or HTML
+    const responseText = await response.text();
+
+    // Check content type
+    const contentType = response.headers.get("content-type") || "";
+    const isJson = contentType.includes("application/json");
+
+    // If response is not JSON, log the actual response
+    if (!isJson) {
+      isDebug &&
+        console.error(
+          `⚠️ ${displayName}|<SEND_EMAIL_HTTP>| [ERROR] | Response is not JSON. Status: ${
+            response.status
+          }, Content-Type: ${contentType}, Response: ${responseText.substring(
+            0,
+            200
+          )}`
+        );
+
+      // Check for common error scenarios
+      if (response.status === 401 || response.status === 403) {
+        throw new Error(
+          "Web3Forms access key is invalid or missing. Please check your WEB3FORMS_ACCESS_KEY environment variable."
+        );
+      } else if (response.status === 404) {
+        throw new Error(
+          "Web3Forms API endpoint not found. Please verify the API URL."
+        );
+      } else {
+        throw new Error(
+          `Web3Forms returned HTML error page (Status: ${response.status}). Please check your access key and API configuration.`
+        );
+      }
+    }
+
+    // Parse JSON response
+    let result;
+    try {
+      result = JSON.parse(responseText);
+    } catch (parseError) {
+      isDebug &&
+        console.error(
+          `⚠️ ${displayName}|<SEND_EMAIL_HTTP>| [ERROR] | Failed to parse JSON response: ${responseText.substring(
+            0,
+            200
+          )}`
+        );
+      throw new Error(
+        `Web3Forms returned invalid JSON. Please check your access key and API configuration.`
+      );
+    }
 
     // Check if email was sent successfully
     if (response.ok && result.success) {
       isDebug &&
         console.log(
-          `✅ ${displayName}|<SEND_EMAIL_HTTP>| [SUCCESS] | Email sent successfully | Message ID: ${result.message_id || "N/A"}`
+          `✅ ${displayName}|<SEND_EMAIL_HTTP>| [SUCCESS] | Email sent successfully | Message ID: ${
+            result.message_id || "N/A"
+          }`
         );
 
       return {
@@ -82,12 +169,22 @@ ${contactData.whatsapp ? `WhatsApp: ${contactData.whatsapp}` : ""}
         message: "Email sent successfully via HTTP",
       };
     } else {
-      throw new Error(
-        result.message || `HTTP email service returned error: ${response.status}`
-      );
+      // Web3Forms returned an error
+      const errorMessage =
+        result.message ||
+        result.error ||
+        `HTTP email service returned error: ${response.status}`;
+      isDebug &&
+        console.error(
+          `⚠️ ${displayName}|<SEND_EMAIL_HTTP>| [ERROR] | Web3Forms error: ${errorMessage}`
+        );
+      throw new Error(errorMessage);
     }
   } catch (error) {
-    console.error(`⚠️☠️🚨${displayName}|<SEND_EMAIL_HTTP>| catch(ERROR) |`, error);
+    console.error(
+      `⚠️☠️🚨${displayName}|<SEND_EMAIL_HTTP>| catch(ERROR) |`,
+      error
+    );
 
     // Handle specific error types
     if (error.message.includes("not configured")) {
@@ -106,7 +203,8 @@ ${contactData.whatsapp ? `WhatsApp: ${contactData.whatsapp}` : ""}
 
 // Contact form email service using HTTP
 export const contactFormEmailHttp_srv = async (contactData) => {
-  isDebug && console.log(`💡📢❔${displayName}|<CONTACT_FORM_EMAIL_HTTP>| [TRIGGERED]`);
+  isDebug &&
+    console.log(`💡📢❔${displayName}|<CONTACT_FORM_EMAIL_HTTP>| [TRIGGERED]`);
 
   try {
     // Validate admin email
@@ -143,7 +241,10 @@ export const contactFormEmailHttp_srv = async (contactData) => {
       messageId: emailResult.messageId,
     };
   } catch (error) {
-    console.error(`⚠️☠️🚨${displayName}|<CONTACT_FORM_EMAIL_HTTP>| catch(ERROR) |`, error);
+    console.error(
+      `⚠️☠️🚨${displayName}|<CONTACT_FORM_EMAIL_HTTP>| catch(ERROR) |`,
+      error
+    );
 
     // Throw specific error with descriptive message
     const serviceError = new Error(

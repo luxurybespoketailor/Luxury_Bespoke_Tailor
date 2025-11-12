@@ -2,8 +2,6 @@ import { sendEmail_service } from "./nodemailer.js";
 import { contactFormEmailHttp_srv } from "./httpEmail_srv.js";
 import { contactFormTemplate } from "./emailTemplates/_emailTemplates.index.js";
 import { ADMIN_EMAIL } from "../00_config/nodemailerConfig.js";
-import dotenv from "dotenv";
-dotenv.config();
 
 const displayName = " | contactFormEmail_srv.js | ";
 const isDebug = true;

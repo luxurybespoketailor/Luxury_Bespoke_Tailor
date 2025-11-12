@@ -22,29 +22,40 @@ The system automatically detects the environment and uses the appropriate servic
 3. Get your access key from the dashboard
 4. Copy your access key
 
-### Step 2: Configure Environment Variables
+### Step 2: Configure Recipient Email in Web3Forms Dashboard
+
+**IMPORTANT**: The recipient email is configured in the Web3Forms dashboard, NOT via API.
+
+1. Go to your Web3Forms dashboard: [https://app.web3forms.com/](https://app.web3forms.com/)
+2. Click on your form (or create a new one)
+3. Go to "Settings" or "Form Settings"
+4. Set the **Recipient Email** to your admin email (e.g., `vakoowen@gmail.com`)
+5. Save the settings
+
+**Note**: The recipient email is linked to your access key. All emails sent using this access key will go to the configured recipient email.
+
+### Step 3: Configure Environment Variables
 
 **In Render.com**, add these environment variables:
 
 ```bash
 # Required for HTTP email service (production)
-WEB3FORMS_ACCESS_KEY=your-web3forms-access-key-here
+WEB3FORMS_ACCESS_KEY=e8dceaa5-825a-4756-bfba-39b1af3aca62
 
-# Required (recipient email)
+# Required (for logging purposes - actual recipient is configured in Web3Forms dashboard)
 ADMIN_EMAIL=your-email@gmail.com
-
-# Optional: Force HTTP email service (even in development)
-USE_HTTP_EMAIL=true
 
 # Production environment
 NODE_ENV=production
 ```
 
-### Step 3: Test the Setup
+**Note**: `ADMIN_EMAIL` is used for logging purposes. The actual recipient email is configured in the Web3Forms dashboard.
+
+### Step 4: Test the Setup
 
 1. Deploy to Render.com
 2. Submit a contact form
-3. Check your email inbox
+3. Check your email inbox (the email configured in Web3Forms dashboard)
 4. Check Render.com logs for confirmation
 
 ## Environment Variables Reference
@@ -74,10 +85,14 @@ NODE_ENV=production
 ### Issue: Emails not being received
 
 **Solution**: 
-1. Check Web3Forms dashboard for delivery status
-2. Check spam folder
-3. Verify `ADMIN_EMAIL` is correct
-4. Check Render.com logs for errors
+1. **Verify recipient email in Web3Forms dashboard** - This is the most common issue!
+   - Go to Web3Forms dashboard: [https://app.web3forms.com/](https://app.web3forms.com/)
+   - Check Form Settings → Recipient Email
+   - Make sure it's set to your admin email (e.g., `vakoowen@gmail.com`)
+2. Check Web3Forms dashboard for delivery status
+3. Check spam folder
+4. Verify `WEB3FORMS_ACCESS_KEY` is correct in Render.com
+5. Check Render.com logs for errors
 
 ### Issue: Still using SMTP in production
 
