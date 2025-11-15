@@ -12,12 +12,13 @@ const NavBar_right = ({ version }) => {
   };
 
   // Last 3 items for right side
-  const rightItems = NAVBAR_ITEMS.slice(2);
+  const rightItems = NAVBAR_ITEMS.slice(4);
 
   const className = `navBar--right ${version}`;
   const listClassName = `navBar--right_list ${version}`;
   const itemClassName = `navBar--right_item ${version}`;
-  const linkClassName = (href) => `navBar--right_link ${version} ${isActive(href)}`;
+  const linkClassName = (href) =>
+    `navBar--right_link ${version} ${isActive(href)}`;
 
   return (
     <nav className={className}>

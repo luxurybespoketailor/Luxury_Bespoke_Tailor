@@ -12,7 +12,7 @@ const NavBar_left = ({ version }) => {
   };
 
   // First 2 items for left side
-  const leftItems = NAVBAR_ITEMS.slice(0, 2);
+  const leftItems = NAVBAR_ITEMS.slice(0, 4);
 
   const className = `navBar--left ${version}`;
   const listClassName = `navBar--left_list ${version}`;
