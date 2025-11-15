@@ -2,11 +2,11 @@
 const businessHours = {
   weekdays: {
     label: "Monday - Friday",
-    hours: "9:00 AM - 6:00 PM",
+    hours: "10:00 AM - 9:30 PM",
   },
   saturday: {
     label: "Saturday",
-    hours: "10:00 AM - 4:00 PM",
+    hours: "10:00 AM - 7:30 PM",
   },
   sunday: {
     label: "Sunday",

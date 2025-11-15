@@ -5,6 +5,7 @@ export { branding } from "./branding.js";
 export { businessHours } from "./businessHours.js";
 export { 
   store, 
+  freeHomeService,
   processSteps, 
   services, 
   categoryDescriptions,

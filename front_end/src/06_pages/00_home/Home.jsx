@@ -9,6 +9,7 @@ import {
 } from "../../01_comps/comps.index.js";
 import {
   store,
+  freeHomeService,
   processSteps,
   servicesOverview,
   lookbookPreview,
@@ -122,7 +123,35 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Section 4: Services Overview */}
+      {/* Section 4: Free Home Service */}
+      <section className="home__homeService section">
+        <div className="container container--lg">
+          <SectionHeading
+            title={freeHomeService.title}
+            subtitle={freeHomeService.subtitle}
+          />
+          <div className="home__homeServiceContent">
+            <p className="home__homeServiceText">{freeHomeService.description}</p>
+            <div className="home__homeServiceFeatures">
+              <ul className="home__homeServiceList">
+                {freeHomeService.features.map((feature, index) => (
+                  <li key={index} className="home__homeServiceItem">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <button
+              className="home__homeServiceBtn btn btn--primary btn--large"
+              onClick={() => navigate("/contact")}
+            >
+              Schedule Free Home Visit
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Services Overview */}
       <section className="home__services section">
         <div className="container container--lg">
           <SectionHeading title={servicesOverview.title} />
@@ -141,7 +170,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Section 5: Lookbook Preview */}
+      {/* Section 6: Lookbook Preview */}
       <section className="home__lookbook section section--bg-cream">
         <div className="container">
           <SectionHeading
@@ -171,7 +200,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Section 6: Store Location */}
+      {/* Section 7: Store Location */}
       <section className="home__store section">
         <div className="container">
           <SectionHeading
@@ -189,7 +218,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Section 7: Final CTA */}
+      {/* Section 8: Final CTA */}
       <section className="home__finalCta section section--bg-navy">
         <div className="container">
           <div className="home__finalCtaContent">

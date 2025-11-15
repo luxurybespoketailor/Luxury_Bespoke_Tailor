@@ -24,6 +24,65 @@
   gap: 3rem;
 }
 
+/* ===== Free Home Service Section ===== */
+
+.home__homeService {
+  background-color: #000000;
+}
+
+.home__homeServiceContent {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.home__homeServiceText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #cccccc;
+  margin-bottom: 2rem;
+}
+
+.home__homeServiceFeatures {
+  margin-bottom: 2.5rem;
+}
+
+.home__homeServiceList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.home__homeServiceItem {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cccccc;
+  padding: 1rem 1.5rem;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border-left: 3px solid #c9a961;
+  text-align: left;
+  position: relative;
+  padding-left: 3rem;
+}
+
+.home__homeServiceItem::before {
+  content: "✓";
+  position: absolute;
+  left: 1rem;
+  color: #c9a961;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.home__homeServiceBtn {
+  margin-top: 1rem;
+}
+
 /* ===== Services Overview Section ===== */
 
 .home__services {
@@ -156,6 +215,19 @@
     max-width: 650px;
   }
 
+  /* Free Home Service */
+  .home__homeServiceText {
+    font-size: 1.2rem;
+  }
+
+  .home__homeServiceList {
+    grid-template-columns: 1fr;
+  }
+
+  .home__homeServiceItem {
+    font-size: 1.1rem;
+  }
+
   /* Services Text */
   .home__servicesText {
     font-size: 1.2rem;
@@ -189,6 +261,15 @@
   /* Lookbook Grid - maintain 3 columns for better aspect ratio */
   .home__lookbookGrid {
     gap: 2rem;
+  }
+
+  /* Free Home Service */
+  .home__homeServiceText {
+    font-size: 1.25rem;
+  }
+
+  .home__homeServiceList {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Services Text */

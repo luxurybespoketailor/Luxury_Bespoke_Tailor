@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Hero, SectionHeading, ProcessStep } from "../../01_comps/comps.index.js";
-import { services, processSteps } from "../../04_constances/_constances.index.js";
+import { services, processSteps, freeHomeService } from "../../04_constances/_constances.index.js";
 import { Placeholder_image_1 } from "../../00_assets/assets.index.js";
 import "./_styles/services.css";
 
@@ -52,8 +52,30 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Free Home Service Section */}
+      <section className="services__homeService section section--bg-cream">
+        <div className="container container--lg">
+          <SectionHeading
+            title={freeHomeService.title}
+            subtitle={freeHomeService.subtitle}
+          />
+          <div className="services__homeServiceContent">
+            <p className="services__homeServiceText">{freeHomeService.description}</p>
+            <div className="services__homeServiceFeatures">
+              <ul className="services__homeServiceList">
+                {freeHomeService.features.map((feature, index) => (
+                  <li key={index} className="services__homeServiceItem">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Process Section */}
-      <section className="services__process section section--bg-cream">
+      <section className="services__process section">
         <div className="container">
           <SectionHeading
             title="Our Process"
