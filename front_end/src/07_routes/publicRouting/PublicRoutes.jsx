@@ -18,6 +18,7 @@ const Woomen = lazy(() => import("../../06_pages/04_Woomen/Woomen.jsx"));
 const Wedding = lazy(() => import("../../06_pages/05_Wedding/Wedding.jsx"));
 const Gallery = lazy(() => import("../../06_pages/06_Gallery/Gallery.jsx"));
 const Brands = lazy(() => import("../../06_pages/07_Brands/Brands.jsx"));
+const Services = lazy(() => import("../../06_pages/08_Services/Services.jsx"));
 
 /*
 
@@ -68,6 +69,7 @@ const PublicRoutes = () => {
       <Route path="Wedding" element={<Wedding />} />
       <Route path="Gallery" element={<Gallery />} />
       <Route path="Brands" element={<Brands />} />
+      <Route path="Services" element={<Services />} />
     </Routes>
   );
 };

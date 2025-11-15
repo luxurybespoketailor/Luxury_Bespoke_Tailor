@@ -1,0 +1,74 @@
+/* GalleryFilter Component Styles */
+
+.galleryFilter {
+  background-color: #000000;
+  border-bottom: 1px solid #333333;
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+.galleryFilter__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Filter button */
+.galleryFilter__btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #cccccc;
+  border: 2px solid #333333;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.galleryFilter__btn:hover {
+  border-color: #c9a961;
+  color: #ffffff;
+}
+
+/* Active filter button */
+.galleryFilter__btn--active {
+  background-color: #c9a961;
+  color: #000000;
+  border-color: #c9a961;
+}
+
+.galleryFilter__btn--active:hover {
+  background-color: #d4b76f;
+  border-color: #d4b76f;
+  color: #000000;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .galleryFilter {
+    padding: 2rem 0;
+  }
+
+  .galleryFilter__btn {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .galleryFilter__container {
+    gap: 1.5rem;
+  }
+}
+

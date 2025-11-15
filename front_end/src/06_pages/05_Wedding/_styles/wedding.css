@@ -1,0 +1,134 @@
+/* Wedding Page Styles */
+
+.wedding {
+  width: 100%;
+}
+
+/* ===== Description Section ===== */
+
+.wedding__description {
+  background-color: #000000;
+}
+
+.wedding__text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #cccccc;
+  margin-bottom: 2rem;
+}
+
+.wedding__features {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border-left: 4px solid #c9a961;
+  border: 1px solid #333333;
+}
+
+.wedding__featuresTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.wedding__featuresList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.wedding__featureItem {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #cccccc;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.wedding__featureItem::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #c9a961;
+  font-weight: 700;
+}
+
+/* ===== Gallery Section ===== */
+
+.wedding__galleryLink {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ===== CTA Section ===== */
+
+.wedding__cta {
+  background-color: #000000;
+}
+
+.wedding__ctaContent {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.wedding__ctaTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.wedding__ctaText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 2rem;
+}
+
+/* ===== Tablet Styles ===== */
+
+@media (min-width: 768px) {
+  .wedding__text {
+    font-size: 1.2rem;
+  }
+
+  .wedding__featuresTitle {
+    font-size: 1.75rem;
+  }
+
+  .wedding__featureItem {
+    font-size: 1.1rem;
+  }
+
+  .wedding__ctaTitle {
+    font-size: 2.5rem;
+  }
+
+  .wedding__ctaText {
+    font-size: 1.2rem;
+  }
+}
+
+/* ===== Desktop Styles ===== */
+
+@media (min-width: 1024px) {
+  .wedding__text {
+    font-size: 1.25rem;
+  }
+
+  .wedding__ctaContent {
+    padding: 3rem 0;
+  }
+
+  .wedding__ctaTitle {
+    font-size: 3rem;
+  }
+}
+

@@ -1,0 +1,119 @@
+/* ProcessStep Component Styles */
+
+.processStep {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* Step number circle */
+.processStep__number {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #000000;
+  border: 3px solid #c9a961;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.processStep:hover .processStep__number {
+  background-color: #c9a961;
+  transform: scale(1.1);
+}
+
+.processStep__number span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c9a961;
+  transition: color 0.3s ease;
+}
+
+.processStep:hover .processStep__number span {
+  color: #000000;
+}
+
+/* Connector line between steps */
+.processStep__connector {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    #c9a961 0%,
+    #c9a961 50%,
+    transparent 50%,
+    transparent 100%
+  );
+  background-size: 20px 2px;
+  z-index: 1;
+  display: none;
+}
+
+/* Content area */
+.processStep__content {
+  max-width: 300px;
+}
+
+/* Step title */
+.processStep__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+/* Step description */
+.processStep__description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .processStep__number {
+    width: 100px;
+    height: 100px;
+  }
+
+  .processStep__number span {
+    font-size: 2.5rem;
+  }
+
+  .processStep__title {
+    font-size: 1.75rem;
+  }
+
+  .processStep__description {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop styles - horizontal layout */
+@media (min-width: 1024px) {
+  .processStep {
+    flex-direction: column;
+  }
+
+  .processStep__connector {
+    display: block;
+  }
+
+  .processStep__content {
+    max-width: 280px;
+  }
+}
+

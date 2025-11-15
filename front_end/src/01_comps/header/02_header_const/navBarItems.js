@@ -30,7 +30,12 @@ export const NAVBAR_ITEMS = [
     href: "/Brands",
   },
   {
-    id: 5,
+    id: 7,
+    label: "SERVICES",
+    href: "/Services",
+  },
+  {
+    id: 8,
     label: "Contact",
     href: "/contact",
   },

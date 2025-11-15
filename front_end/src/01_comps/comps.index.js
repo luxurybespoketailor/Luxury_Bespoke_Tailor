@@ -1,2 +1,9 @@
 export { default as Header } from "./header/Header.jsx";
 export { default as Footer } from "./footer/Footer.jsx";
+export { default as Hero } from "./hero/Hero.jsx";
+export { default as CategoryCard } from "./categoryCard/CategoryCard.jsx";
+export { default as ProcessStep } from "./processStep/ProcessStep.jsx";
+export { default as StoreCard } from "./storeCard/StoreCard.jsx";
+export { default as GalleryFilter } from "./galleryFilter/GalleryFilter.jsx";
+export { default as GalleryGrid } from "./galleryGrid/GalleryGrid.jsx";
+export { default as SectionHeading } from "./sectionHeading/SectionHeading.jsx";

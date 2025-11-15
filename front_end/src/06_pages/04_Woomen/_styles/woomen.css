@@ -1,0 +1,134 @@
+/* Woomen Page Styles */
+
+.woomen {
+  width: 100%;
+}
+
+/* ===== Description Section ===== */
+
+.woomen__description {
+  background-color: #000000;
+}
+
+.woomen__text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #cccccc;
+  margin-bottom: 2rem;
+}
+
+.woomen__features {
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border-left: 4px solid #c9a961;
+  border: 1px solid #333333;
+}
+
+.woomen__featuresTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.woomen__featuresList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.woomen__featureItem {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #cccccc;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.woomen__featureItem::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #c9a961;
+  font-weight: 700;
+}
+
+/* ===== Gallery Section ===== */
+
+.woomen__galleryLink {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ===== CTA Section ===== */
+
+.woomen__cta {
+  background-color: #000000;
+}
+
+.woomen__ctaContent {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.woomen__ctaTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.woomen__ctaText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin-bottom: 2rem;
+}
+
+/* ===== Tablet Styles ===== */
+
+@media (min-width: 768px) {
+  .woomen__text {
+    font-size: 1.2rem;
+  }
+
+  .woomen__featuresTitle {
+    font-size: 1.75rem;
+  }
+
+  .woomen__featureItem {
+    font-size: 1.1rem;
+  }
+
+  .woomen__ctaTitle {
+    font-size: 2.5rem;
+  }
+
+  .woomen__ctaText {
+    font-size: 1.2rem;
+  }
+}
+
+/* ===== Desktop Styles ===== */
+
+@media (min-width: 1024px) {
+  .woomen__text {
+    font-size: 1.25rem;
+  }
+
+  .woomen__ctaContent {
+    padding: 3rem 0;
+  }
+
+  .woomen__ctaTitle {
+    font-size: 3rem;
+  }
+}
+

@@ -24,7 +24,7 @@ const Logo = ({ version }) => {
     navigate("/");
   };
 
-  const src = isHover ? logo_landscape_light : logo_landscape_dark;
+  const src = isHover ? logo_landscape_dark : logo_landscape_dark;
   const className = `logo ${version}`;
 
   return (

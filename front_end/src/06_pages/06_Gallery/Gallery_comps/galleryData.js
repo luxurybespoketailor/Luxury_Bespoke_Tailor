@@ -1,0 +1,57 @@
+// Gallery images with category metadata
+import {
+  Placeholder_image_1,
+  Placeholder_image_2,
+  Placeholder_image_3,
+  Placeholder_image_4,
+  Placeholder_image_5,
+  Placeholder_image_6,
+  Placeholder_image_7,
+  Placeholder_image_8,
+  Placeholder_image_9,
+  Placeholder_image_10,
+  Placeholder_image_11,
+  Placeholder_image_12,
+  Placeholder_image_13,
+  Placeholder_image_14,
+  Placeholder_image_15,
+  Placeholder_image_16,
+  Placeholder_image_17,
+  Placeholder_image_18,
+  Placeholder_image_19,
+  Placeholder_image_20,
+  Placeholder_image_21,
+} from "../../../00_assets/assets.index.js";
+
+export const galleryImages = [
+  { id: 1, src: Placeholder_image_1, category: "all", alt: "Luxury bespoke tailoring" },
+  { id: 2, src: Placeholder_image_2, category: "casual", alt: "Casual tailoring" },
+  { id: 3, src: Placeholder_image_3, category: "tuxedos", alt: "Tuxedo collection" },
+  { id: 4, src: Placeholder_image_4, category: "womens", alt: "Women's tailoring" },
+  { id: 5, src: Placeholder_image_5, category: "wedding", alt: "Wedding attire" },
+  { id: 6, src: Placeholder_image_6, category: "casual", alt: "Casual elegance" },
+  { id: 7, src: Placeholder_image_7, category: "tuxedos", alt: "Black tie perfection" },
+  { id: 8, src: Placeholder_image_8, category: "womens", alt: "Women's bespoke suits" },
+  { id: 9, src: Placeholder_image_9, category: "wedding", alt: "Wedding day attire" },
+  { id: 10, src: Placeholder_image_10, category: "casual", alt: "Smart casual wear" },
+  { id: 11, src: Placeholder_image_11, category: "casual", alt: "Casual sophistication" },
+  { id: 12, src: Placeholder_image_12, category: "casual", alt: "Relaxed tailoring" },
+  { id: 13, src: Placeholder_image_13, category: "casual", alt: "Contemporary casual" },
+  { id: 14, src: Placeholder_image_14, category: "casual", alt: "Business casual" },
+  { id: 15, src: Placeholder_image_15, category: "tuxedos", alt: "Formal tuxedo" },
+  { id: 16, src: Placeholder_image_16, category: "tuxedos", alt: "Evening wear" },
+  { id: 17, src: Placeholder_image_17, category: "tuxedos", alt: "Classic tuxedo" },
+  { id: 18, src: Placeholder_image_18, category: "womens", alt: "Women's formal wear" },
+  { id: 19, src: Placeholder_image_19, category: "womens", alt: "Ladies tailoring" },
+  { id: 20, src: Placeholder_image_20, category: "womens", alt: "Women's bespoke" },
+  { id: 21, src: Placeholder_image_21, category: "wedding", alt: "Groom attire" },
+];
+
+export const filterCategories = [
+  { id: 1, label: "All", value: "all" },
+  { id: 2, label: "Casual", value: "casual" },
+  { id: 3, label: "Tuxedos", value: "tuxedos" },
+  { id: 4, label: "Women's", value: "womens" },
+  { id: 5, label: "Wedding", value: "wedding" },
+];
+

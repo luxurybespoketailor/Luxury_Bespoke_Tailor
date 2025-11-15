@@ -1,0 +1,96 @@
+/* SectionHeading Component Styles */
+
+.sectionHeading {
+  margin-bottom: 3rem;
+}
+
+/* Alignment variants */
+.sectionHeading--center {
+  text-align: center;
+}
+
+.sectionHeading--left {
+  text-align: left;
+}
+
+.sectionHeading--right {
+  text-align: right;
+}
+
+/* Section title */
+.sectionHeading__title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* Section subtitle */
+.sectionHeading__subtitle {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #cccccc;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+.sectionHeading--left .sectionHeading__subtitle {
+  margin: 0 0 1.5rem 0;
+}
+
+.sectionHeading--right .sectionHeading__subtitle {
+  margin: 0 0 1.5rem auto;
+}
+
+/* Decorative divider */
+.sectionHeading__divider {
+  width: 80px;
+  height: 3px;
+  background-color: #c9a961;
+  margin: 0 auto;
+}
+
+.sectionHeading--left .sectionHeading__divider {
+  margin: 0;
+}
+
+.sectionHeading--right .sectionHeading__divider {
+  margin: 0 0 0 auto;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .sectionHeading {
+    margin-bottom: 4rem;
+  }
+
+  .sectionHeading__title {
+    font-size: 2.5rem;
+  }
+
+  .sectionHeading__subtitle {
+    font-size: 1.2rem;
+  }
+
+  .sectionHeading__divider {
+    width: 100px;
+    height: 4px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .sectionHeading__title {
+    font-size: 3rem;
+  }
+
+  .sectionHeading__subtitle {
+    font-size: 1.3rem;
+    max-width: 800px;
+  }
+}
+

@@ -1,0 +1,110 @@
+/* CategoryCard Component Styles */
+
+.categoryCard {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.categoryCard:hover {
+  transform: translateY(-4px);
+}
+
+/* Background image */
+.categoryCard__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.categoryCard:hover .categoryCard__image {
+  transform: scale(1.1);
+}
+
+/* Overlay - darker on hover */
+.categoryCard__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+  z-index: 1;
+}
+
+.categoryCard:hover .categoryCard__overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Content container - centered */
+.categoryCard__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* Card title */
+.categoryCard__title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.categoryCard:hover .categoryCard__title {
+  transform: translateY(-5px);
+}
+
+/* Arrow indicator */
+.categoryCard__arrow {
+  display: block;
+  font-size: 2rem;
+  color: #c9a961;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.categoryCard:hover .categoryCard__arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .categoryCard__title {
+    font-size: 2rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .categoryCard__title {
+    font-size: 2.25rem;
+  }
+
+  .categoryCard__arrow {
+    font-size: 2.5rem;
+  }
+}
+

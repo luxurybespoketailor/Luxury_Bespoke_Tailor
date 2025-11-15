@@ -1,0 +1,117 @@
+/* StoreCard Component Styles */
+
+.storeCard {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #333333;
+}
+
+.storeCard:hover {
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Store name */
+.storeCard__name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #c9a961;
+  padding-bottom: 0.75rem;
+}
+
+/* Details container */
+.storeCard__details {
+  margin-bottom: 1.5rem;
+}
+
+/* Info row */
+.storeCard__info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Icon */
+.storeCard__icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Text */
+.storeCard__text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cccccc;
+  margin: 0;
+}
+
+/* Phone link */
+.storeCard__link {
+  font-size: 1rem;
+  color: #c9a961;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.storeCard__link:hover {
+  color: #d4b76f;
+  text-decoration: underline;
+}
+
+/* Map button */
+.storeCard__mapBtn {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.storeCard__mapBtn:hover {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.storeCard__mapBtn:active {
+  transform: scale(0.98);
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .storeCard {
+    padding: 2.5rem;
+  }
+
+  .storeCard__name {
+    font-size: 2rem;
+  }
+
+  .storeCard__text,
+  .storeCard__link {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .storeCard__mapBtn {
+    width: auto;
+    min-width: 200px;
+  }
+}
+

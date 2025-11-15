@@ -1,0 +1,163 @@
+/* Brands Page Styles */
+
+.brands {
+  width: 100%;
+}
+
+/* ===== Header Section ===== */
+
+.brands__header {
+  background-color: #000000;
+  padding-top: 6rem;
+}
+
+/* ===== Grid Section ===== */
+
+.brands__grid {
+  background-color: #1a1a1a;
+}
+
+.brands__gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.brands__item {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #333333;
+}
+
+.brands__item:hover {
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.brands__logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.brands__item:hover .brands__logo {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* ===== Description Section ===== */
+
+.brands__description {
+  background-color: #000000;
+}
+
+.brands__content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.brands__text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+}
+
+.brands__text:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== CTA Section ===== */
+
+.brands__cta {
+  background-color: #1a1a1a;
+}
+
+.brands__ctaContent {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.brands__ctaTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.brands__ctaText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* ===== Tablet Styles ===== */
+
+@media (min-width: 768px) {
+  .brands__header {
+    padding-top: 8rem;
+  }
+
+  .brands__gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .brands__text {
+    font-size: 1.2rem;
+  }
+
+  .brands__ctaTitle {
+    font-size: 2.5rem;
+  }
+
+  .brands__ctaText {
+    font-size: 1.2rem;
+  }
+}
+
+/* ===== Desktop Styles ===== */
+
+@media (min-width: 1024px) {
+  .brands__header {
+    padding-top: 10rem;
+  }
+
+  .brands__gridContainer {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+  }
+
+  .brands__text {
+    font-size: 1.25rem;
+  }
+
+  .brands__ctaContent {
+    padding: 3rem 0;
+  }
+
+  .brands__ctaTitle {
+    font-size: 3rem;
+  }
+
+  .brands__ctaText {
+    font-size: 1.3rem;
+  }
+}
+

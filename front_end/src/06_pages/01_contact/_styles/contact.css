@@ -1,59 +1,126 @@
+/* Contact Page Styles */
+
 .contact {
-  min-height: 100vh;
-  padding: var(--spacing-xl) var(--spacing-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--primary-bg-color);
-}
-
-.contact__container {
   width: 100%;
-  max-width: 800px;
+  background-color: #000000;
+}
+
+/* ===== Header Section ===== */
+
+.contact__header {
+  background-color: #1a1a1a;
+  padding-top: 6rem;
+}
+
+/* ===== Form Section ===== */
+
+.contact__form {
+  background-color: #000000;
+}
+
+.contact__formContainer {
+  max-width: 700px;
   margin: 0 auto;
+}
+
+/* ===== Store Section ===== */
+
+.contact__store {
+  background-color: #1a1a1a;
+}
+
+.contact__storeContainer {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== Business Hours Section ===== */
+
+.contact__hours {
+  background-color: #000000;
+}
+
+.contact__hoursContent {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
+  border: 1px solid #333333;
+}
+
+.contact__hoursItem {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #333333;
 }
 
-.contact__title {
-  color: var(--primary-text-color);
-  font-size: var(--primary-h1-size);
-  font-weight: 700;
-  text-align: center;
-  margin: 0;
+.contact__hoursItem:last-child {
+  border-bottom: none;
 }
 
-.contact__subtitle {
-  color: var(--muted-text-color);
-  font-size: var(--primary-text-size);
-  text-align: center;
-  margin: 0;
+.contact__hoursDay {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.contact__hoursTime {
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+.contact__hoursNote {
+  font-size: 1rem;
   line-height: 1.6;
+  color: #cccccc;
+  text-align: center;
+  font-style: italic;
+  margin: 0;
 }
 
-/* Mobile: Adjust spacing and font sizes */
-@media (max-width: 767px) {
-  .contact {
-    padding: var(--spacing-lg) var(--spacing-sm);
+/* ===== Tablet Styles ===== */
+
+@media (min-width: 768px) {
+  .contact__header {
+    padding-top: 8rem;
   }
 
-  .contact__container {
-    gap: var(--spacing-md);
+  .contact__storeContainer {
+    max-width: 650px;
   }
 
-  .contact__title {
-    font-size: var(--secondary-h1-size);
+  .contact__hoursContent {
+    padding: 2.5rem 3rem;
   }
 
-  .contact__subtitle {
-    font-size: var(--secondary-text-size);
+  .contact__hoursDay {
+    font-size: 1.2rem;
+  }
+
+  .contact__hoursTime {
+    font-size: 1.1rem;
+  }
+
+  .contact__hoursNote {
+    font-size: 1.1rem;
   }
 }
 
-/* Tablet: Medium spacing */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .contact {
-    padding: var(--spacing-xl) var(--spacing-md);
+/* ===== Desktop Styles ===== */
+
+@media (min-width: 1024px) {
+  .contact__header {
+    padding-top: 10rem;
+  }
+
+  .contact__formContainer {
+    max-width: 800px;
+  }
+
+  .contact__hoursContent {
+    padding: 3rem 4rem;
   }
 }

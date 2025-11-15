@@ -1,152 +1,211 @@
+/* Home Page Styles */
+
 .home {
-  min-height: 100vh;
-}
-
-/* Hero Section */
-.home__hero {
-  position: relative;
   width: 100%;
-  height: 100vh;
-  margin-top: -80px; /* Pull hero up behind header - adjust based on header height */
-  padding-top: 80px; /* Add padding to prevent content from hiding behind header */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.home__heroImage {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* ===== Categories Section ===== */
+
+.home__categories {
+  background-color: #000000;
+}
+
+.home__categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* ===== Process Steps Section ===== */
+
+.home__processSteps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+/* ===== Services Overview Section ===== */
+
+.home__services {
+  background-color: #000000;
+}
+
+.home__servicesContent {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.home__servicesText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+}
+
+.home__servicesBtn {
+  margin-top: 1rem;
+}
+
+/* ===== Lookbook Preview Section ===== */
+
+.home__lookbookGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.home__lookbookItem {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid #333333;
+}
+
+.home__lookbookItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+}
+
+.home__lookbookImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.5s ease;
 }
 
-.home__heroOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.6)
-  );
-  z-index: 1;
+.home__lookbookItem:hover .home__lookbookImage {
+  transform: scale(1.05);
 }
 
-.home__heroContent {
-  position: relative;
-  z-index: 2;
+.home__lookbookCta {
   text-align: center;
-  color: var(--primary-text-color);
-  padding: var(--spacing-lg);
-  max-width: 900px;
 }
 
-.home__heroTitle {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: var(--spacing-md);
-  line-height: 1.2;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+/* ===== Store Section ===== */
+
+.home__store {
+  background-color: #000000;
 }
 
-.home__heroSubtitle {
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-bottom: var(--spacing-xl);
-  font-style: italic;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-}
-
-.home__heroBtn {
-  padding: var(--spacing-md) var(--spacing-xl);
-  background-color: transparent;
-  border: 2px solid var(--primary-text-color);
-  color: var(--primary-text-color);
-  font-size: var(--primary-text-size);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-medium);
-  border-radius: 4px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.home__heroBtn:hover {
-  background-color: var(--primary-text-color);
-  color: var(--primary-bg-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
-}
-
-/* Content Section */
-.home__content {
-  padding: var(--spacing-xl) var(--spacing-lg);
-  max-width: 1200px;
+.home__storeContainer {
+  max-width: 600px;
   margin: 0 auto;
+}
+
+/* ===== Final CTA Section ===== */
+
+.home__finalCta {
+  background-color: #1a1a1a;
+}
+
+.home__finalCtaContent {
   text-align: center;
+  padding: 2rem 0;
 }
 
-.home__content h2 {
+.home__finalCtaTitle {
   font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: var(--spacing-md);
-  color: var(--primary-text-color);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1rem;
 }
 
-.home__content p {
+.home__finalCtaText {
   font-size: 1.2rem;
-  color: var(--muted-text-color);
   line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  opacity: 0.9;
 }
 
-/* Mobile: Smaller text */
-@media (max-width: 767px) {
-  .home__hero {
-    margin-top: -60px; /* Smaller header on mobile */
-    padding-top: 60px;
+.home__finalCtaBtn {
+  margin-top: 1rem;
+}
+
+/* ===== Tablet Styles (768px+) ===== */
+
+@media (min-width: 768px) {
+  /* Categories Grid */
+  .home__categoriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
-  .home__heroTitle {
-    font-size: 2.5rem;
+  /* Process Steps - 2 columns */
+  .home__processSteps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
   }
 
-  .home__heroSubtitle {
+  /* Lookbook Grid - 3 columns */
+  .home__lookbookGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Store Container - centered */
+  .home__storeContainer {
+    max-width: 650px;
+  }
+
+  /* Services Text */
+  .home__servicesText {
     font-size: 1.2rem;
   }
 
-  .home__heroBtn {
-    padding: var(--spacing-sm) var(--spacing-lg);
-    font-size: var(--secondary-text-size);
-  }
-
-  .home__content h2 {
-    font-size: 2rem;
-  }
-
-  .home__content p {
-    font-size: 1rem;
-  }
-}
-
-/* Tablet: Medium text */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .home__heroTitle {
+  /* Final CTA */
+  .home__finalCtaTitle {
     font-size: 3rem;
   }
 
-  .home__heroSubtitle {
+  .home__finalCtaText {
     font-size: 1.3rem;
-  }
-
-  .home__content h2 {
-    font-size: 2.2rem;
   }
 }
 
+/* ===== Desktop Styles (1024px+) ===== */
+
+@media (min-width: 1024px) {
+  /* Categories Grid - 4 columns */
+  .home__categoriesGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  /* Process Steps - 4 columns horizontal */
+  .home__processSteps {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  /* Lookbook Grid - maintain 3 columns for better aspect ratio */
+  .home__lookbookGrid {
+    gap: 2rem;
+  }
+
+  /* Services Text */
+  .home__servicesText {
+    font-size: 1.25rem;
+  }
+
+  /* Final CTA */
+  .home__finalCtaContent {
+    padding: 3rem 0;
+  }
+
+  .home__finalCtaTitle {
+    font-size: 3.5rem;
+  }
+
+  .home__finalCtaText {
+    font-size: 1.4rem;
+  }
+}

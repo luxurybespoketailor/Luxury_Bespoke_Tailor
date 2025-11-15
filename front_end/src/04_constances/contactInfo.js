@@ -1,13 +1,12 @@
-const contactEmail = "info@luxurybespoketailor.com";
-const contactPhone = "+1234567890";
-const whatsappNumber = "+1234567890";
-const address = "123 Main St, Anytown, USA";
+const contactEmail = "luxury.bespoke@yahoo.com";
+const contactPhone = "+971528989345";
+const whatsappNumber = "+971528989345";
+const address = "Office 7, Level 1, Ibri House, 3A Street, Dubai, UAE";
 const coordinates = {
-  lat: 37.774929,
-  lng: -122.419418,
+  lat: 25.126466122604008,
+  lng: 55.204976538362374,
 };
-const location_link =
-  "https://www.google.com/maps/place/123+Main+St,+Anytown,+USA";
+const location_link = "https://maps.google.com/?q=Dubai+Ibri+House";
 
 const contactInfo = {
   email: contactEmail,
