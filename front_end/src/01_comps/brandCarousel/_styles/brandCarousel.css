@@ -1,0 +1,140 @@
+/* Brand Carousel Component Styles */
+
+.brandCarousel {
+  width: 100%;
+  overflow: hidden;
+  background-color: #000000;
+  padding: 3rem 0;
+  position: relative;
+}
+
+/* Add subtle fade edges for better visual effect */
+.brandCarousel::before,
+.brandCarousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.brandCarousel::before {
+  left: 0;
+  background: linear-gradient(to right, #000000, transparent);
+}
+
+.brandCarousel::after {
+  right: 0;
+  background: linear-gradient(to left, #000000, transparent);
+}
+
+/* Track that holds all logos */
+.brandCarousel__track {
+  display: flex;
+  gap: 4rem;
+  animation: scroll 40s linear infinite;
+  width: fit-content;
+}
+
+/* Pause animation on hover for better UX */
+.brandCarousel:hover .brandCarousel__track {
+  animation-play-state: paused;
+}
+
+/* Individual logo item */
+.brandCarousel__item {
+  flex-shrink: 0;
+  width: 180px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 0 !important;
+  border: 2px solid #c9a961;
+  box-shadow: 
+    0 0 5px #c9a961,
+    0 0 10px #c9a961,
+    0 0 20px #c9a961,
+    0 0 40px rgba(201, 169, 97, 0.5),
+    inset 0 0 10px rgba(201, 169, 97, 0.2);
+  transition: all 0.3s ease;
+}
+
+.brandCarousel__item:hover {
+  background-color: #2a2a2a;
+  border-color: #c9a961;
+  transform: translateY(-5px);
+}
+
+/* Logo image */
+.brandCarousel__logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.2);
+  /* opacity: 0.7; */
+  transition: all 0.3s ease;
+  scale: 1.1;
+}
+
+.brandCarousel__item:hover .brandCarousel__logo {
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+}
+
+/* Keyframe animation for infinite scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .brandCarousel {
+    padding: 4rem 0;
+  }
+
+  .brandCarousel::before,
+  .brandCarousel::after {
+    width: 150px;
+  }
+
+  .brandCarousel__track {
+    gap: 5rem;
+  }
+
+  .brandCarousel__item {
+    width: 200px;
+    height: 110px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .brandCarousel {
+    padding: 5rem 0;
+  }
+
+  .brandCarousel::before,
+  .brandCarousel::after {
+    width: 200px;
+  }
+
+  .brandCarousel__track {
+    gap: 6rem;
+  }
+
+  .brandCarousel__item {
+    width: 220px;
+    height: 120px;
+    padding: 2rem;
+  }
+}

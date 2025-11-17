@@ -157,6 +157,14 @@
   margin: 0 auto;
 }
 
+/* ===== Brands Section ===== */
+
+.home__brands {
+  background-color: var(--color-black);
+  padding-top: 3rem;
+  padding-bottom: 0;
+}
+
 /* ===== Final CTA Section ===== */
 
 .home__finalCta {

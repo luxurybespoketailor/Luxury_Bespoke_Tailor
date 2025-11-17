@@ -10,5 +10,6 @@ export {
   services, 
   categoryDescriptions,
   servicesOverview,
-  lookbookPreview
+  lookbookPreview,
+  brandLogosData
 } from "./pageContent.js";

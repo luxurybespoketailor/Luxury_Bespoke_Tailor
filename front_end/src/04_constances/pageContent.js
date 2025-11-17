@@ -205,3 +205,21 @@ export const lookbookPreview = {
   description: "Elevate your style: Whether you're seeking ideas for a special occasion or simply looking to refresh your wardrobe, our lookbook is your ultimate source of style inspiration.",
 };
 
+// Brand Logos - Import separately in the component that uses them
+export const brandLogosData = [
+  { id: 1, name: "Bastine", alt: "Bastine luxury fabric" },
+  { id: 2, name: "Dormeuil", alt: "Dormeuil premium textiles" },
+  { id: 3, name: "Drago Lanificio", alt: "Drago Lanificio fine fabrics" },
+  { id: 4, name: "Emilio Rocco", alt: "Emilio Rocco bespoke materials" },
+  { id: 5, name: "Giorgio Alberto", alt: "Giorgio Alberto luxury fabrics" },
+  { id: 6, name: "Lanificio Cerruti", alt: "Lanificio Cerruti premium wool" },
+  { id: 7, name: "Lanificio F.lli Marzoni", alt: "Lanificio F.lli Marzoni textiles" },
+  { id: 8, name: "Loro Piana", alt: "Loro Piana luxury fabrics" },
+  { id: 9, name: "Luciano Tango", alt: "Luciano Tango fine materials" },
+  { id: 10, name: "Palazzo", alt: "Palazzo premium fabrics" },
+  { id: 11, name: "Reda", alt: "Reda luxury wool" },
+  { id: 12, name: "Scabal", alt: "Scabal fine textiles" },
+  { id: 13, name: "Vitale Barberis", alt: "Vitale Barberis premium fabrics" },
+  { id: 14, name: "Zegna", alt: "Ermenegildo Zegna luxury materials" },
+];
+

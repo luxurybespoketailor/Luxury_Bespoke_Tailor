@@ -6,6 +6,7 @@ import {
   ProcessStep,
   StoreCard,
   SectionHeading,
+  BrandCarousel,
 } from "../../01_comps/comps.index.js";
 import {
   store,
@@ -13,6 +14,7 @@ import {
   processSteps,
   servicesOverview,
   lookbookPreview,
+  brandLogosData,
 } from "../../04_constances/_constances.index.js";
 import {
   Placeholder_image_1,
@@ -26,11 +28,43 @@ import {
   Placeholder_image_13,
   Placeholder_image_14,
   Placeholder_image_15,
+  Bastine_logo,
+  Dormeul_logo,
+  Drago_Lanificio_logo,
+  Emilio_Rocco_logo,
+  Giorgio_Alberto,
+  Lanificio_Cerruti_logo,
+  Lanificio_fi_Marzoni_logo,
+  loro_Piana_logo,
+  Luiciano_Tango_logo,
+  Palazzo_logo,
+  Reda_logo,
+  Scabal_logo,
+  Vitale_Barberis_logo,
+  Zegna_logo,
 } from "../../00_assets/assets.index.js";
 import "./_styles/home.css";
 
 const Home = () => {
   const navigate = useNavigate();
+
+  // Brand logos array with imported images
+  const brandLogos = [
+    { src: Bastine_logo, alt: brandLogosData[0].alt },
+    { src: Dormeul_logo, alt: brandLogosData[1].alt },
+    { src: Drago_Lanificio_logo, alt: brandLogosData[2].alt },
+    { src: Emilio_Rocco_logo, alt: brandLogosData[3].alt },
+    { src: Giorgio_Alberto, alt: brandLogosData[4].alt },
+    { src: Lanificio_Cerruti_logo, alt: brandLogosData[5].alt },
+    { src: Lanificio_fi_Marzoni_logo, alt: brandLogosData[6].alt },
+    { src: loro_Piana_logo, alt: brandLogosData[7].alt },
+    { src: Luiciano_Tango_logo, alt: brandLogosData[8].alt },
+    { src: Palazzo_logo, alt: brandLogosData[9].alt },
+    { src: Reda_logo, alt: brandLogosData[10].alt },
+    { src: Scabal_logo, alt: brandLogosData[11].alt },
+    { src: Vitale_Barberis_logo, alt: brandLogosData[12].alt },
+    { src: Zegna_logo, alt: brandLogosData[13].alt },
+  ];
 
   // Category data for CategoryCard components
   const categories = [
@@ -218,7 +252,18 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Section 8: Final CTA */}
+      {/* Section 8: Brand Carousel */}
+      <section className="home__brands">
+        <div className="container">
+          <SectionHeading
+            title="Premium Fabric Partners"
+            subtitle="We work exclusively with the world's finest fabric mills"
+          />
+        </div>
+        <BrandCarousel logos={brandLogos} />
+      </section>
+
+      {/* Section 9: Final CTA */}
       <section className="home__finalCta section section--bg-navy">
         <div className="container">
           <div className="home__finalCtaContent">
