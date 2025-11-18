@@ -13,26 +13,10 @@ const BusinessHours = ({ businessHours }) => {
       <ul className="businessHours__list">
         <li className="businessHours__item">
           <span className="businessHours__day">
-            {businessHours.weekdays.label}
+            {businessHours.everyday.label}
           </span>
           <span className="businessHours__time">
-            {businessHours.weekdays.hours}
-          </span>
-        </li>
-        <li className="businessHours__item">
-          <span className="businessHours__day">
-            {businessHours.saturday.label}
-          </span>
-          <span className="businessHours__time">
-            {businessHours.saturday.hours}
-          </span>
-        </li>
-        <li className="businessHours__item">
-          <span className="businessHours__day">
-            {businessHours.sunday.label}
-          </span>
-          <span className="businessHours__time businessHours__time--closed">
-            {businessHours.sunday.hours}
+            {businessHours.everyday.hours}
           </span>
         </li>
       </ul>
@@ -42,15 +26,7 @@ const BusinessHours = ({ businessHours }) => {
 
 BusinessHours.propTypes = {
   businessHours: PropTypes.shape({
-    weekdays: PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      hours: PropTypes.string.isRequired,
-    }).isRequired,
-    saturday: PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      hours: PropTypes.string.isRequired,
-    }).isRequired,
-    sunday: PropTypes.shape({
+    everyday: PropTypes.shape({
       label: PropTypes.string.isRequired,
       hours: PropTypes.string.isRequired,
     }).isRequired,

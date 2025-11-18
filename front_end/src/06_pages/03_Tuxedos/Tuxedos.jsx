@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Hero, SectionHeading, GalleryGrid } from "../../01_comps/comps.index.js";
+import {
+  Hero,
+  SectionHeading,
+  GalleryGrid,
+} from "../../01_comps/comps.index.js";
 import { categoryDescriptions } from "../../04_constances/_constances.index.js";
 import {
-  Placeholder_image_7,
-  Placeholder_image_15,
-  Placeholder_image_16,
-  Placeholder_image_17,
   Tuxedo_1,
   Tuxedo_2,
   Tuxedo_3,
@@ -78,7 +78,7 @@ const Tuxedos = () => {
         <div className="container container--lg">
           <SectionHeading title="Timeless Elegance" alignment="left" />
           <p className="tuxedos__text">{tuxedos.mainText}</p>
-          
+
           <div className="tuxedos__features">
             <h3 className="tuxedos__featuresTitle">Key Features</h3>
             <ul className="tuxedos__featuresList">
@@ -95,16 +95,12 @@ const Tuxedos = () => {
       {/* Gallery Section */}
       <section className="tuxedos__gallery section section--bg-cream">
         <div className="container">
-          <SectionHeading 
-            title="Tuxedo Gallery" 
-            subtitle="Explore our black tie collection"
-          />
+          <SectionHeading title="Gallery" subtitle="Get Inspired" />
           <GalleryGrid images={galleryImages} />
           <div className="tuxedos__galleryLink">
-            <button 
+            <button
               className="btn btn--outline"
-              onClick={() => navigate("/Gallery")}
-            >
+              onClick={() => navigate("/Gallery")}>
               View Full Gallery
             </button>
           </div>
@@ -115,14 +111,16 @@ const Tuxedos = () => {
       <section className="tuxedos__cta section">
         <div className="container">
           <div className="tuxedos__ctaContent">
-            <h2 className="tuxedos__ctaTitle">Interested in Tuxedos?</h2>
+            <h2 className="tuxedos__ctaTitle">
+              Interested in Formal Tailoring?
+            </h2>
             <p className="tuxedos__ctaText">
-              Let our master tailors create the perfect tuxedo for your special occasion
+              Let our expert tailors create bespoke garments that celebrate your
+              unique style
             </p>
-            <button 
+            <button
               className="tuxedos__ctaBtn btn btn--primary btn--large"
-              onClick={() => navigate("/contact")}
-            >
+              onClick={() => navigate("/contact")}>
               Book Your Appointment
             </button>
           </div>

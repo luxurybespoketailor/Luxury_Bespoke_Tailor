@@ -7,10 +7,6 @@ import {
 } from "../../01_comps/comps.index.js";
 import { categoryDescriptions } from "../../04_constances/_constances.index.js";
 import {
-  Placeholder_image_8,
-  Placeholder_image_18,
-  Placeholder_image_19,
-  Placeholder_image_20,
   Woomen_1,
   Woomen_2,
   Woomen_3,
@@ -47,11 +43,15 @@ const Woomen = () => {
 
   // Gallery images for Women's category
   const galleryImages = [
-    { id: 5, src: Woomen_1, alt: "Women's tailoring 5" },
-    { id: 6, src: Woomen_2, alt: "Women's tailoring 6" },
-    { id: 7, src: Woomen_3, alt: "Women's tailoring 7" },
-    { id: 8, src: Woomen_4, alt: "Women's tailoring 8" },
-    { id: 9, src: Woomen_5, alt: "Women's tailoring 9" },
+    { id: 1, src: Woomen_1, alt: "Women's tailoring 1" },
+    { id: 2, src: Woomen_2, alt: "Women's tailoring 2" },
+    { id: 3, src: Woomen_3, alt: "Women's tailoring 3" },
+    { id: 4, src: Woomen_4, alt: "Women's tailoring 4" },
+    { id: 5, src: Woomen_5, alt: "Women's tailoring 5" },
+    { id: 6, src: Woomen_6, alt: "Women's tailoring 6" },
+    { id: 7, src: Woomen_7, alt: "Women's tailoring 7" },
+    { id: 8, src: Woomen_8, alt: "Women's tailoring 8" },
+    { id: 9, src: Woomen_9, alt: "Women's tailoring 9" },
     { id: 10, src: Woomen_10, alt: "Women's tailoring 10" },
     { id: 11, src: Woomen_11, alt: "Women's tailoring 11" },
     { id: 12, src: Woomen_12, alt: "Women's tailoring 12" },
@@ -69,6 +69,7 @@ const Woomen = () => {
     { id: 24, src: Woomen_24, alt: "Women's tailoring 24" },
     { id: 25, src: Woomen_25, alt: "Women's tailoring 25" },
     { id: 26, src: Woomen_26, alt: "Women's tailoring 26" },
+
   ];
 
   return (

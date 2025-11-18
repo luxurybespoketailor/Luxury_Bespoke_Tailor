@@ -7,13 +7,6 @@ import {
 } from "../../01_comps/comps.index.js";
 import { categoryDescriptions } from "../../04_constances/_constances.index.js";
 import {
-  Placeholder_image_6,
-  Placeholder_image_10,
-  Placeholder_image_11,
-  Placeholder_image_12,
-  Placeholder_image_13,
-  Placeholder_image_14,
-  //
   Casual_1,
   Casual_2,
   Casual_3,

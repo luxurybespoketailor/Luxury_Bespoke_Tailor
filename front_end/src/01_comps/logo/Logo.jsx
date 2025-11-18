@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import {
-  logo_portrait_dark,
-  logo_portrait_light,
-  logo_landscape_light,
-  logo_landscape_dark,
-} from "../../00_assets/assets.index.js";
+import { logo_landscape_dark } from "../../00_assets/assets.index.js";
 import "../_styles/logo.css";
 
 const Logo = ({ version }) => {

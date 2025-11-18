@@ -62,15 +62,7 @@ FooterBrand.propTypes = {
     location_link: PropTypes.string.isRequired,
   }).isRequired,
   businessHours: PropTypes.shape({
-    weekdays: PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      hours: PropTypes.string.isRequired,
-    }).isRequired,
-    saturday: PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      hours: PropTypes.string.isRequired,
-    }).isRequired,
-    sunday: PropTypes.shape({
+    everyday: PropTypes.shape({
       label: PropTypes.string.isRequired,
       hours: PropTypes.string.isRequired,
     }).isRequired,

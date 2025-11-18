@@ -19,15 +19,7 @@ import {
 import {
   Placeholder_image_1,
   Placeholder_image_2,
-  Placeholder_image_3,
-  Placeholder_image_4,
   Placeholder_image_5,
-  Placeholder_image_10,
-  Placeholder_image_11,
-  Placeholder_image_12,
-  Placeholder_image_13,
-  Placeholder_image_14,
-  Placeholder_image_15,
   Bastine_logo,
   Dormeul_logo,
   Drago_Lanificio_logo,
@@ -76,21 +68,21 @@ const Home = () => {
   // Category data for CategoryCard components
   const categories = [
     {
+      id: 2,
+      title: "Formal",
+      image: Tuxedo_16,
+      href: "/Formal",
+    },
+    {
       id: 1,
       title: "Casual",
       image: Placeholder_image_2,
       href: "/Casual",
     },
     {
-      id: 2,
-      title: "Tuxedos",
-      image: Placeholder_image_3,
-      href: "/Tuxedos",
-    },
-    {
       id: 3,
       title: "Women's",
-      image: Placeholder_image_4,
+      image: Casual_1,
       href: "/Woomen",
     },
     {

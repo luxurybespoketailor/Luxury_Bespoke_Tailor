@@ -7,10 +7,6 @@ import {
 } from "../../01_comps/comps.index.js";
 import { categoryDescriptions } from "../../04_constances/_constances.index.js";
 import {
-  Placeholder_image_9,
-  Placeholder_image_21,
-  Placeholder_image_5,
-  Placeholder_image_17,
   Wedding_hero,
   Wedding_1,
   Wedding_2,
