@@ -8,3 +8,4 @@ export { default as GalleryFilter } from "./galleryFilter/GalleryFilter.jsx";
 export { default as GalleryGrid } from "./galleryGrid/GalleryGrid.jsx";
 export { default as SectionHeading } from "./sectionHeading/SectionHeading.jsx";
 export { default as BrandCarousel } from "./brandCarousel/BrandCarousel.jsx";
+export { default as WhatsAppButton } from "./whatsAppButton/WhatsAppButton.jsx";

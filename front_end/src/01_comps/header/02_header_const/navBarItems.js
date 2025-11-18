@@ -24,11 +24,11 @@ export const NAVBAR_ITEMS = [
     label: "GALLERY",
     href: "/Gallery",
   },
-    {
-    id: 6,
-    label: "BRANDS",
-    href: "/Brands",
-  },
+  //   {
+  //   id: 6,
+  //   label: "BRANDS",
+  //   href: "/Brands",
+  // },
   {
     id: 7,
     label: "SERVICES",

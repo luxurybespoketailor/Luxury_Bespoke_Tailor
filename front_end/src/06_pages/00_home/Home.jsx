@@ -42,6 +42,13 @@ import {
   Scabal_logo,
   Vitale_Barberis_logo,
   Zegna_logo,
+  //
+  Casual_1,
+  Casual_5,
+  Tuxedo_16,
+  Wedding_30,
+  Wedding_31,
+  XXX,
 } from "../../00_assets/assets.index.js";
 import "./_styles/home.css";
 
@@ -96,12 +103,12 @@ const Home = () => {
 
   // Lookbook preview images
   const lookbookImages = [
-    Placeholder_image_10,
-    Placeholder_image_11,
-    Placeholder_image_12,
-    Placeholder_image_13,
-    Placeholder_image_14,
-    Placeholder_image_15,
+    Casual_1,
+    Casual_5,
+    Tuxedo_16,
+    Wedding_30,
+    Wedding_31,
+    XXX,
   ];
 
   return (
@@ -165,7 +172,9 @@ const Home = () => {
             subtitle={freeHomeService.subtitle}
           />
           <div className="home__homeServiceContent">
-            <p className="home__homeServiceText">{freeHomeService.description}</p>
+            <p className="home__homeServiceText">
+              {freeHomeService.description}
+            </p>
             <div className="home__homeServiceFeatures">
               <ul className="home__homeServiceList">
                 {freeHomeService.features.map((feature, index) => (
@@ -177,8 +186,7 @@ const Home = () => {
             </div>
             <button
               className="home__homeServiceBtn btn btn--primary btn--large"
-              onClick={() => navigate("/contact")}
-            >
+              onClick={() => navigate("/contact")}>
               Schedule Free Home Visit
             </button>
           </div>
@@ -196,8 +204,7 @@ const Home = () => {
             </p>
             <button
               className="home__servicesBtn btn btn--primary btn--large"
-              onClick={() => navigate("/contact")}
-            >
+              onClick={() => navigate("/contact")}>
               See Our Full Services
             </button>
           </div>
@@ -226,8 +233,7 @@ const Home = () => {
           <div className="home__lookbookCta">
             <button
               className="btn btn--secondary btn--large"
-              onClick={() => navigate("/Gallery")}
-            >
+              onClick={() => navigate("/Gallery")}>
               Explore Our Gallery
             </button>
           </div>
@@ -273,8 +279,7 @@ const Home = () => {
             </p>
             <button
               className="home__finalCtaBtn btn btn--primary btn--large"
-              onClick={() => navigate("/contact")}
-            >
+              onClick={() => navigate("/contact")}>
               Book Your Appointment
             </button>
           </div>
