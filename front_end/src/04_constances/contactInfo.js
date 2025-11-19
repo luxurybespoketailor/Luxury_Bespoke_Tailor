@@ -1,4 +1,4 @@
-const contactEmail = "luxury.bespoke@yahoo.com";
+const contactEmail = "luxurybespoketailor@gmail.com";
 const contactPhone = "+971528989345";
 const whatsappNumber = "+971528989345";
 const address = "Office 7, Level 1, Ibri House, 3A Street, Dubai, UAE";

@@ -12,7 +12,7 @@ export const NAVBAR_ITEMS = [
 
   {
     id: 3,
-    label: "Woomen's",
+    label: "Women's",
     href: "/Woomen",
   },
   {

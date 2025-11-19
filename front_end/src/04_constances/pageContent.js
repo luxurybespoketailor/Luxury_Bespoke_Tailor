@@ -6,7 +6,7 @@ export const store = {
   name: "Dubai Showroom",
   address: "Office 7, Level 1, Ibri House, 3A Street, Dubai, UAE",
   phone: "+971 55 110 8854",
-  email: "info@luxurybespoketailor.com",
+  email: "luxurybespoketailor@gmail.com",
   mapLink: "https://maps.google.com/?q=Dubai+Ibri+House",
 };
 
