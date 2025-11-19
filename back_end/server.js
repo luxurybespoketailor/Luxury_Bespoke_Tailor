@@ -4,7 +4,6 @@ import helmet from "helmet";
 import { PORT, corsOptions, setCSPHeader } from "./00_config/config.index.js";
 import {
   health_routes,
-  email_routes,
   contact_routes,
   keepAlive_routes,
 } from "./routes.js";
@@ -38,7 +37,6 @@ app.use(setCSPHeader);
 // API Routes
 app.use("/api", health_routes);
 app.use("/api", keepAlive_routes);
-app.use("/api", email_routes);
 app.use("/api", contact_routes);
 
 // Error handlers must be last - after all routes

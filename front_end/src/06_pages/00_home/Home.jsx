@@ -83,7 +83,7 @@ const Home = () => {
       id: 3,
       title: "Women's",
       image: Casual_1,
-      href: "/Woomen",
+      href: "/Women",
     },
     {
       id: 4,
