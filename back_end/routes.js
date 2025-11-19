@@ -1,8 +1,5 @@
 import { Router } from "express";
-import {
-  healthCheck,
-  keepAlive,
-} from "./01-controllers/controllers.index.js";
+import { healthCheck, keepAlive } from "./01-controllers/controllers.index.js";
 import contactSubmittion_cntrl from "./01-controllers/contactSubmittion_cntrl.js";
 import { vld_sntzr_mddlwre } from "./middlewares.js";
 import { contactSubmittion_vld } from "./01-controllers/validators/contactSubmittion_vld.js";

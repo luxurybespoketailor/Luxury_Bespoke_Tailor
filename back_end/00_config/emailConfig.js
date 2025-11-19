@@ -2,30 +2,20 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-// ============================================================
-// ADMIN EMAIL CONFIGURATION
-// ============================================================
-export const ADMIN_EMAIL = process.env.ADMIN_EMAIL; // Recipient email for contact form submissions
 
-// ============================================================
-// POSTMARK CONFIGURATION (Primary Email Service)
-// ============================================================
+export const ADMIN_EMAIL = process.env.ADMIN_EMAIL; 
+
+
 export const POSTMARK_SERVER_TOKEN = process.env.POSTMARK_SERVER_TOKEN;
 export const POSTMARK_FROM_EMAIL = process.env.POSTMARK_FROM_EMAIL;
 
-// ============================================================
-// GMAIL/SMTP CONFIGURATION (Legacy/Alternative)
-// ============================================================
-export const EMAIL_HOST = process.env.EMAIL_HOST; // e.g., smtp.gmail.com
-export const EMAIL_USER = process.env.EMAIL_USER; // Gmail address
-export const EMAIL_PASS = process.env.EMAIL_PASS; // Gmail App Password
+
+export const EMAIL_HOST = process.env.EMAIL_HOST; 
+export const EMAIL_USER = process.env.EMAIL_USER; 
+export const EMAIL_PASS = process.env.EMAIL_PASS; 
 export const EMAIL_PORT = parseInt(process.env.EMAIL_PORT, 10) || 587;
 
-// ============================================================
-// VALIDATION
-// ============================================================
 
-// Validate Postmark configuration (currently active)
 const validatePostmarkConfig = () => {
   const requiredVars = {
     POSTMARK_SERVER_TOKEN,
@@ -52,7 +42,6 @@ const validatePostmarkConfig = () => {
   }
 };
 
-// Validate Gmail/SMTP configuration (if using legacy service)
 const validateGmailConfig = () => {
   const requiredVars = {
     EMAIL_HOST,
@@ -73,7 +62,6 @@ const validateGmailConfig = () => {
   }
 };
 
-// Run validation on module load
 validatePostmarkConfig();
 validateGmailConfig();
 

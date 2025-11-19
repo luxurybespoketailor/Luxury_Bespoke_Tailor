@@ -4,7 +4,6 @@ import { DeviceContext } from "./DeviceContext";
 const useDeviceContext = () => {
   const context = useContext(DeviceContext);
 
-  // Error handling for missing provider
   if (!context) {
     throw new Error(
       "useDeviceContext must be used within a DeviceProvider. " +

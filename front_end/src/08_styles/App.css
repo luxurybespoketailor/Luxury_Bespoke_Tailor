@@ -1,5 +1,4 @@
 :root {
-  /* Luxury Color Palette */
   --color-navy: #1a1a2e;
   --color-gold: #c9a961;
   --color-gold-light: #d4b76f;
@@ -10,35 +9,29 @@
   --color-gray-medium: #2a2a2a;
   --color-gray-light: #333333;
 
-  /* Background Colors - Inverted to Dark Theme */
   --primary-bg-color: var(--color-black);
   --secondary-bg-color: var(--color-gray-dark);
   --tertiary-bg-color: var(--color-gray-medium);
   --hover-bg-color: var(--color-gray-light);
 
-  /* Text Colors - Inverted to Light on Dark */
   --primary-text-color: var(--color-white);
   --secondary-text-color: #cccccc;
   --muted-text-color: #999999;
   --light-text-color: var(--color-white);
 
-  /* Border Colors */
   --primary-border-color: var(--color-gray-light);
   --secondary-border-color: var(--color-gold);
 
-  /* Transitions */
   --transition-fast: 0.2s ease-in-out;
   --transition-medium: 0.3s ease-in-out;
   --transition-slow: 0.5s ease-in-out;
 
-  /* Z-index layers */
   --z-index-base: 1;
   --z-index-header: 100;
   --z-index-mobile-menu: 200;
   --z-index-modal: 300;
   --z-index-tooltip: 400;
 
-  /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
@@ -47,7 +40,6 @@
   --spacing-2xl: 4rem;
   --spacing-3xl: 6rem;
 
-  /* Container Max Widths */
   --container-sm: 640px;
   --container-md: 768px;
   --container-lg: 1024px;
@@ -55,7 +47,6 @@
   --container-2xl: 1400px;
 }
 
-/* ===== Global Resets ===== */
 
 * {
   margin: 0;
@@ -79,7 +70,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== Container Utilities ===== */
 
 .container {
   width: 100%;
@@ -104,7 +94,6 @@ body {
   max-width: var(--container-xl);
 }
 
-/* ===== Section Utilities ===== */
 
 .section {
   padding: 4rem 0;
@@ -127,8 +116,7 @@ body {
   color: var(--color-white);
 }
 
-/* ===== Button Styles ===== */
-
+    
 .btn {
   display: inline-block;
   padding: 1rem 2rem;

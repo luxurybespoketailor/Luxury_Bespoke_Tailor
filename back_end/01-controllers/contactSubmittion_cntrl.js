@@ -15,7 +15,6 @@ const contactSubmittion_cntrl = async (req, res) => {
   } catch (error) {
     console.error(`⚠️☠️🚨${displayName}|<CONTROLLER>| catch(ERROR) |`, error);
 
-    // Return specific error messages
     const errorMessage =
       error.message || "Failed to process contact submission";
     const statusCode = error.statusCode || 500;

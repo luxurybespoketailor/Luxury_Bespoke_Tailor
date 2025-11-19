@@ -7,7 +7,6 @@ export const contactSubmittion_srv = async (req, isDebug) => {
   const { sanitizedData } = req.body;
 
   try {
-    // Log 1-2 key pieces of sanitized data received
     if (sanitizedData) {
       isDebug &&
         console.log(
@@ -17,7 +16,6 @@ export const contactSubmittion_srv = async (req, isDebug) => {
         );
     }
 
-    // Business Logic: Send email notification
     let emailSent = false;
     try {
       const emailResult = await contactFormEmail_srv(sanitizedData);
@@ -30,7 +28,6 @@ export const contactSubmittion_srv = async (req, isDebug) => {
           );
       }
     } catch (emailError) {
-      // Log email error but don't fail the submission
       console.error(
         `⚠️ ${displayName}|<EMAIL>| [ERROR] | Failed to send email:`,
         emailError.message
@@ -39,7 +36,6 @@ export const contactSubmittion_srv = async (req, isDebug) => {
         console.log(
           `⚠️ ${displayName}|<EMAIL>| [CONTINUE] | Continuing despite email error`
         );
-      // Continue processing even if email fails
       emailSent = false;
     }
 
@@ -58,7 +54,6 @@ export const contactSubmittion_srv = async (req, isDebug) => {
   } catch (error) {
     console.error(`⚠️☠️🚨${displayName}|<SERVICE>| catch(ERROR) |`, error);
 
-    // Throw specific error with descriptive message
     const serviceError = new Error(
       error.message ||
         "Service unavailable - failed to process contact submission"

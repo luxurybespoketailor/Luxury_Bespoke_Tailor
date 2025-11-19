@@ -1,10 +1,8 @@
-// HTML Email Template for Contact Form Submissions
-// Optimized for Yahoo Mail, Gmail, and Outlook compatibility
+
 
 export const contactFormTemplate = (contactData) => {
   const { name, service, message, phone, whatsapp } = contactData;
 
-  // Format optional fields
   const serviceSection = service
     ? `
     <tr>
@@ -47,7 +45,6 @@ export const contactFormTemplate = (contactData) => {
   `
     : "";
 
-  // HTML Email Template - Yahoo Mail Optimized
   const html = `
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -167,7 +164,6 @@ export const contactFormTemplate = (contactData) => {
 </html>
   `;
 
-  // Plain text version for email clients that don't support HTML
   const text = `
 New Contact Form Submission - Luxury Bespoke Tailor
 

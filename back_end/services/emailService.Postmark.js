@@ -6,37 +6,24 @@ dotenv.config();
 const displayName = " | emailService_Postmark.js | ";
 const isDebug = true;
 
-// Initialize Postmark client
 const client = new postmark.ServerClient(process.env.POSTMARK_SERVER_TOKEN);
 
-/**
- * Send email via Postmark API
- * @param {Object} emailData - Email data object
- * @param {string} emailData.to - Recipient email address
- * @param {string} emailData.subject - Email subject
- * @param {string} emailData.html - HTML email body
- * @param {string} emailData.text - Plain text email body (fallback)
- * @returns {Promise<Object>} Result with messageId
- */
 export const emailService_Postmark = async (emailData) => {
   isDebug && console.log(`💡📢❔${displayName}|<SERVICE>| [TRIGGERED]`);
 
   try {
-    // Validate required fields
     if (!emailData.to || !emailData.subject || !emailData.html) {
       throw new Error(
         "Missing required email fields: to, subject, and html are required"
       );
     }
 
-    // Validate Postmark token
     if (!process.env.POSTMARK_SERVER_TOKEN) {
       throw new Error(
         "POSTMARK_SERVER_TOKEN is not configured in environment variables"
       );
     }
 
-    // Validate from email
     if (!process.env.POSTMARK_FROM_EMAIL) {
       throw new Error(
         "POSTMARK_FROM_EMAIL is not configured in environment variables"
@@ -48,14 +35,13 @@ export const emailService_Postmark = async (emailData) => {
         `📤 ${displayName}|<SERVICE>| Sending email to: ${emailData.to}`
       );
 
-    // Send email via Postmark
     const result = await client.sendEmail({
-      From: process.env.POSTMARK_FROM_EMAIL, // Must be verified sender signature in Postmark
+      From: process.env.POSTMARK_FROM_EMAIL,
       To: emailData.to,
       Subject: emailData.subject,
       HtmlBody: emailData.html,
       TextBody: emailData.text,
-      MessageStream: "outbound", // Default message stream
+      MessageStream: "outbound",
     });
 
     isDebug &&
@@ -72,7 +58,6 @@ export const emailService_Postmark = async (emailData) => {
   } catch (error) {
     console.error(`⚠️☠️🚨${displayName}|<SERVICE>| catch(ERROR) |`, error);
 
-    // Handle Postmark-specific errors
     if (error.statusCode) {
       const errorMessage = error.message || "Postmark API error";
       const serviceError = new Error(errorMessage);
@@ -80,7 +65,6 @@ export const emailService_Postmark = async (emailData) => {
       throw serviceError;
     }
 
-    // Handle general errors
     throw new Error(error.message || "Failed to send email via Postmark");
   }
 };

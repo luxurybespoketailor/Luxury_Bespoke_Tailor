@@ -1,23 +1,19 @@
 import React, { createContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-// Create the Device Context
 const DeviceContext = createContext();
 
-// Breakpoints for device detection
 const BREAKPOINTS = {
   MOBILE: 768,
   TABLET: 1024,
 };
 
-// DeviceContext Provider
 const DeviceProvider = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    // Function to detect device type based on window width
     const detectDevice = () => {
       const width = window.innerWidth;
 
@@ -36,13 +32,10 @@ const DeviceProvider = ({ children }) => {
       }
     };
 
-    // Detect on mount
     detectDevice();
 
-    // Add resize listener
     window.addEventListener("resize", detectDevice);
 
-    // Cleanup listener on unmount
     return () => {
       window.removeEventListener("resize", detectDevice);
     };

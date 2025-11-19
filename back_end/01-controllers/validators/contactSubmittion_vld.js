@@ -25,10 +25,8 @@ export const request_success = (displayName, isDebug, payload) => {
 export const contactSubmittion_vld = async (req) => {
   let sanitizedData = {};
 
-  // Accept data from body
   const data = req.body;
 
-  // Validate name (required, min 3 characters, alphabetic and spaces only)
   if (!data.name || typeof data.name !== "string") {
     return request_failed("Name is required", data.name, displayName, isDebug);
   }
@@ -44,7 +42,6 @@ export const contactSubmittion_vld = async (req) => {
     );
   }
 
-  // Check if name contains only alphabetic characters and spaces
   const nameRegex = /^[a-zA-Z\s]+$/;
   if (!nameRegex.test(trimmedName)) {
     return request_failed(
@@ -55,7 +52,6 @@ export const contactSubmittion_vld = async (req) => {
     );
   }
 
-  // Validate message (required, max 1000 characters)
   if (!data.message || typeof data.message !== "string") {
     return request_failed(
       "Message is required",
@@ -85,7 +81,6 @@ export const contactSubmittion_vld = async (req) => {
     );
   }
 
-  // Validate service (optional, if provided: trim and validate)
   let sanitizedService = null;
   if (data.service && typeof data.service === "string") {
     sanitizedService = data.service.trim();
@@ -94,7 +89,6 @@ export const contactSubmittion_vld = async (req) => {
     }
   }
 
-  // Validate phone (optional, if provided: validate phone format)
   let sanitizedPhone = null;
   if (
     data.phone &&
@@ -113,7 +107,6 @@ export const contactSubmittion_vld = async (req) => {
     sanitizedPhone = data.phone.trim();
   }
 
-  // Validate whatsapp (optional, if provided: validate phone format)
   let sanitizedWhatsapp = null;
   if (
     data.whatsapp &&
@@ -132,7 +125,6 @@ export const contactSubmittion_vld = async (req) => {
     sanitizedWhatsapp = data.whatsapp.trim();
   }
 
-  // Sanitize and validated data
   sanitizedData = {
     name: trimmedName,
     message: trimmedMessage,

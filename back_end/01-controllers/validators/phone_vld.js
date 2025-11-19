@@ -1,4 +1,3 @@
-// Phone number validation helper
 export const phone_vld = (phone) => {
   let isValid = true;
   let message = "Phone number is valid ✅";
@@ -11,8 +10,6 @@ export const phone_vld = (phone) => {
 
   const trimmedPhone = phone.trim();
 
-  // Basic phone validation: allows digits, spaces, dashes, parentheses, and +
-  // Minimum 10 digits, maximum 20 characters
   const phoneRegex =
     /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/;
 
@@ -22,7 +19,6 @@ export const phone_vld = (phone) => {
     return { isValid, message };
   }
 
-  // Count digits in phone number
   const digitCount = trimmedPhone.replace(/\D/g, "").length;
   if (digitCount < 10) {
     isValid = false;

@@ -9,20 +9,16 @@ export const contactFormEmail_srv = async (contactData) => {
   isDebug && console.log(`💡📢❔${displayName}|<SERVICE>| [TRIGGERED]`);
 
   try {
-    // Validate admin email
     if (!ADMIN_EMAIL) {
       throw new Error(
         "Admin email not configured - cannot send contact form email"
       );
     }
 
-    // Generate email subject
     const subject = `New Contact Form Submission from ${contactData.name}`;
 
-    // Generate email template
     const { html, text } = contactFormTemplate(contactData);
 
-    // Send email to admin via Postmark API
     const emailResult = await emailService_Postmark({
       to: ADMIN_EMAIL,
       subject: subject,
@@ -43,7 +39,6 @@ export const contactFormEmail_srv = async (contactData) => {
   } catch (error) {
     console.error(`⚠️☠️🚨${displayName}|<SERVICE>| catch(ERROR) |`, error);
 
-    // Throw specific error with descriptive message
     const serviceError = new Error(
       error.message || "Failed to send contact form email"
     );

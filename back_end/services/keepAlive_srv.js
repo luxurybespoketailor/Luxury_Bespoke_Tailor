@@ -3,10 +3,8 @@ import { PORT } from "../00_config/config.index.js";
 
 const displayName = " | keepAlive_srv.js | ";
 
-// Delay helper for retry logic
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-// Make HTTP request to keep-alive endpoint
 const pingKeepAlive = () => {
   return new Promise((resolve, reject) => {
     const options = {
@@ -14,7 +12,7 @@ const pingKeepAlive = () => {
       port: PORT,
       path: "/api/keepalive",
       method: "GET",
-      timeout: 5000, // 5 second timeout
+      timeout: 5000,
     };
 
     const req = http.request(options, (res) => {
@@ -50,18 +48,15 @@ const pingKeepAlive = () => {
   });
 };
 
-// Keep-alive service with retry logic
 export const keepAlive_srv = async () => {
   const maxRetries = 3;
-  const retryDelays = [1000, 2000, 4000]; // Exponential backoff: 1s, 2s, 4s
+  const retryDelays = [1000, 2000, 4000]; 
 
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       await pingKeepAlive();
-      // Silent on success - no logging
       return { success: true };
     } catch (error) {
-      // If this is the last attempt, log the error
       if (attempt === maxRetries) {
         const timestamp = new Date().toISOString();
         console.error(
@@ -71,11 +66,9 @@ export const keepAlive_srv = async () => {
         return { success: false, error: error.message };
       }
 
-      // Wait before retrying
       await delay(retryDelays[attempt - 1]);
     }
   }
 
   return { success: false, error: "All retry attempts exhausted" };
 };
-

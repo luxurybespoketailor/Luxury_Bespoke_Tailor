@@ -13,7 +13,6 @@ export const useWakeUpServer_apiHelper = () => {
       const data = await response.json();
       return { success: response.ok, data };
     } catch (error) {
-      // Log error but don't throw - silent on success, log on failure
       console.error("⚠️ Failed to wake up server:", error.message);
       return {
         success: false,

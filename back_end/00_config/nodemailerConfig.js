@@ -1,9 +1,4 @@
-/**
- * LEGACY FILE - Maintained for backward compatibility
- * For new code, use emailConfig.js instead
- * 
- * This file now re-exports from emailConfig.js
- */
+
 
 export {
   EMAIL_HOST,
