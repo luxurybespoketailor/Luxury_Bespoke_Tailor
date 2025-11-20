@@ -28,6 +28,10 @@ export const corsOptions = {
       allowedOrigins.push(process.env.FRONTEND_URL);
     }
 
+    if (process.env.FRONT_END_URL_DOMAIN) {
+      allowedOrigins.push(process.env.FRONT_END_URL_DOMAIN);
+    }
+
     if (isProduction) {
       if (process.env.VERCEL_URL) {
         allowedOrigins.push(`https://${process.env.VERCEL_URL}`);
@@ -61,5 +65,5 @@ export const corsOptions = {
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
-  optionsSuccessStatus: 200, 
+  optionsSuccessStatus: 200,
 };
