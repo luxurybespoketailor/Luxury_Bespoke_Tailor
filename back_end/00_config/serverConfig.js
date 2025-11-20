@@ -31,7 +31,9 @@ export const corsOptions = {
     if (process.env.FRONT_END_URL_DOMAIN) {
       allowedOrigins.push(process.env.FRONT_END_URL_DOMAIN);
     }
-
+    if (process.env.FRONT_END_URL_DOMAIN_WWW) {
+      allowedOrigins.push(process.env.FRONT_END_URL_DOMAIN_WWW);
+    }
     if (isProduction) {
       if (process.env.VERCEL_URL) {
         allowedOrigins.push(`https://${process.env.VERCEL_URL}`);
