@@ -1,7 +1,8 @@
 const contactEmail = "luxurybespoketailor@gmail.com";
 const contactPhone = "+971528989345";
 const whatsappNumber = "+971528989345";
-const address = "Office 7, Level 1, Ibri House, 3A Street, Dubai, UAE";
+const address =
+  "Shop No 21, Al Asmawi Building-1, Near Bentley Car Showroom Sheikh Zayed Road. Umm Al Sheif";
 const coordinates = {
   lat: 25.126466122604008,
   lng: 55.204976538362374,

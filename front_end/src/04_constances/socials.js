@@ -1,4 +1,5 @@
-const INSTAGRAM_URL = "https://www.instagram.com/luxurybespoketailor/";
+const INSTAGRAM_URL =
+  "https://www.instagram.com/luxurybespoketailor?igsh=MW5sMmVlYTZzaWV3Yw==";
 const FACEBOOK_URL = "https://www.facebook.com/luxurybespoketailor/";
 const LINKEDIN_URL = "https://www.linkedin.com/company/luxurybespoketailor/";
 const YOUTUBE_URL = "https://www.youtube.com/luxurybespoketailor/";

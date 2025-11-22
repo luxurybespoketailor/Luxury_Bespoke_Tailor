@@ -4,8 +4,8 @@
 export const store = {
   id: 1,
   name: "Dubai Showroom",
-  address: "Office 7, Level 1, Ibri House, 3A Street, Dubai, UAE",
-  phone: "+971 55 110 8854",
+  address: "Shop No 21, Al Asmawi Building-1, Near Bentley Car Showroom Sheikh Zayed Road. Umm Al Sheif",
+  phone: "+971528989345",
   email: "luxurybespoketailor@gmail.com",
   mapLink: "https://maps.google.com/?q=Dubai+Ibri+House",
 };
